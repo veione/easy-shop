@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "store-card": "../../components/store-card/store-card",
-    "searchbar": "../../components/searchbar/searchbar"
+    "searchbar": "../../components/searchbar/searchbar",
+    "category-scrollbar": "../../components/category-scrollbar/category-scrollbar"
   }
 }

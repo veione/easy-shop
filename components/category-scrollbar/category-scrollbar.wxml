@@ -1,4 +1,23 @@
 <!--components/category-scrollbar/category-scrollbar.wxml-->
-  <scroll-view scroll-x="true">
-      scroll-view
-  </scroll-view>
+<view class="page-body">
+	<view class="page-section page-section-spacing swiper">
+		<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#D8D8D8" indicator-active-color="#FD6226">
+			<block wx:for="{{background}}" wx:key="*this">
+				<swiper-item>
+					<view class="swiper-item {{item}}">
+
+						<view class="category-item" wx:for="list" wx:for-index="idx" wx:for-item="item" wx:key="{{idx}}">
+							<view class="icon">
+								<image src="../../static/images/fruid.png"></image>
+							</view>
+							<view class="text">
+								<text class="title">水果馆{{idx}}</text>
+							</view>
+						</view>
+
+					</view>
+				</swiper-item>
+			</block>
+		</swiper>
+	</view>
+</view>

@@ -1,1 +1,35 @@
 /* components/category-scrollbar/category-scrollbar.wxss */
+.demo-text-1 {
+  height: 100%;
+  background-color: pink;
+}
+.demo-text-2 {
+  height: 100%;
+  background-color: plum;
+}
+.demo-text-3 {
+  height: 100%;
+  background-color: purple;
+}
+
+.swiper-item {
+  display: flex;
+  flex-flow: row nowrap;
+}
+.category-item {
+  position: relative;
+  width: 96rpx;
+  height: 96rpx;
+  margin: 12rpx;
+  display: inline-flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+.category-item .icon image {
+  width: 96rpx;
+  height: 96rpx;
+}
+
+.category-item .title {
+  font-size: 24rpx;
+}
