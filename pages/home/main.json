@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "store-card": "../../components/store-card/store-card",
+    "searchbar": "../../components/searchbar/searchbar"
+  }
+}

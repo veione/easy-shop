@@ -1,0 +1,63 @@
+/* pages/home/main.wxss */
+.custom-navbar{
+  width: 100%;
+  background-color: red;
+}
+.palce-holder-nav{
+  width: 100%;
+}
+.title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bolder;
+}
+.content{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 32rpx 20rpx 20rpx 0;
+}
+.content>view {
+  width: fit-content;
+  color: white;
+  font-weight: bolder;
+  text-align: right;
+}
+.content>.date {
+  margin: 0;
+}
+.content>.temperature {
+  margin: 0 16rpx 0 0;
+}
+.content>.weather {
+  position: relative;
+}
+.content>.weather>image {
+  padding-top: 12rpx;
+  width: 84rpx;
+  height: 84rpx;
+}
+.demo-text-1 {
+  height: 100%;
+  background-color: pink;
+}
+.demo-text-2 {
+  height: 100%;
+  background-color: plum;
+}
+.demo-text-3 {
+  height: 100%;
+  background-color: purple;
+}
+
+.category-item {
+  position: relative;
+}
+.category-item .icon {
+  width: 48rpx;
+  height: 48rpx;
+}

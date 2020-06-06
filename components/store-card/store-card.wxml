@@ -1,0 +1,21 @@
+<!-- 组件模板 -->
+<view class="store-card">
+    <view class="logo">
+        <image class="logo" src="http://pic1.58cdn.com.cn/p1/big/n_v23c21ddcf9e4841a2b349b3b19b7f0444.jpg" alt="logo" style="width:64px;height:64px"></image>
+    </view>
+    <view class="content">
+        <view class="card-title multi-ellipsis--l2">兴盛优选</view>
+        <view class="card-desc ellipsis">一家有温度的社区电商</view>
+    </view>
+    <view class="metrics">
+        <view class="data">
+            <view class="fans-count text">725</view>
+            <view class="buy-metrics text">2.2万</view>
+        </view>
+        <view class="info">
+            <view class="text">粉丝数</view>
+            <view class="text">购买指数</view>
+        </view>
+    </view>
+</view>
+

@@ -1,0 +1,41 @@
+<!--pages/category/main.wxml-->
+<view class="container">
+  <navbar 
+    title-text="搜索商品"
+    back-icon="../../static/images/back@3x.png"
+    background="#fff"
+    bindback="back"
+    navTitleStyle="left: 84px;"/>
+  <view class="page-container">
+    <view class="searchbar-box">
+      <searchbar class="searchbar" placeholder="搜索商品关键字或名称，搜索商品"/>
+    </view>
+    <view class="history">
+      <text class="text text-history">历史搜索</text>
+      <view class="content">
+        <text>风扇</text>
+        <text>手机</text>
+        <text>空调</text>
+        <text>短袖长衣服短袖长衣服短袖长衣服短袖长衣服短袖长衣服短袖长衣服短袖长衣服</text>
+        <text>老人机</text>
+        <text>冰淇淋蛋挞</text>
+        <text>奶茶冰淇淋</text>
+        <text>风扇</text>
+        <text>手机</text>
+        <text>空调</text>
+        <text>短袖长衣服短袖长衣服短袖长衣服短袖长衣服短袖长衣服短袖长衣服短袖长衣服</text>
+        <text>老人机</text>
+        <text>冰淇淋蛋挞</text>
+        <text>奶茶冰淇淋</text>
+      </view>
+    </view>
+    <view class="btn-box">
+      <button class='btn btn-icon' bindtap="handleClearHistory">
+        <image class='icon' src='../../static/images/delete.png'></image>
+        <view>清空历史记录</view>
+      </button>
+    </view>
+  </view>
+  <floating-cart num="990" bind:handleTap="handleCartBtnTap"/>
+</view>
+

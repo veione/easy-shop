@@ -1,0 +1,87 @@
+<!--pages/home/main.wxml-->
+<view class="container">
+  <view class='custom-navbar'>
+      <view class='palce-holder-nav' style="height: {{navHeight}}px;"></view>
+      <view style="height: {{navHeight}}px;">
+        <text class="title" style="padding-top: {{navHeight - 10}}px;">轻松优选</text>
+      </view>
+      <view class='content' style="height: {{navHeight}}px;">
+          <view class="date">{{date}}</view>
+          <view class="weather"><image src="../../static/images/weather.png"></image> </view>
+          <view class="temperature">{{temperature}}</view>
+      </view>
+  </view>
+  <view class="page-container">
+      <store-card></store-card>
+      <searchbar addflag="true" addimg="../../static/images/share.png" placeholder="搜索商品" bind:handleTap="handleTap"></searchbar>
+      <view class="page-body">
+    <view class="page-section page-section-spacing swiper">
+      <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
+        indicator-color="#D8D8D8" indicator-active-color="#FD6226">
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item>
+            <view class="swiper-item {{item}}">
+              <view class="category-item">
+                <view class="icon">
+                  <image src="../../static/images/fruid.png"></image>
+                </view>
+                <view class="text">
+                  <text class="title">水果</text>
+                </view>
+              </view>
+
+              <view class="category-item">
+                <view class="icon">
+                  <image src="../../static/images/fruid.png"></image>
+                </view>
+                <view class="text">
+                  <text class="title">水果</text>
+                </view>
+              </view>
+
+              <view class="category-item">
+                <view class="icon">
+                  <image src="../../static/images/fruid.png"></image>
+                </view>
+                <view class="text">
+                  <text class="title">水果</text>
+                </view>
+              </view>
+
+              <view class="category-item">
+                <view class="icon">
+                  <image src="../../static/images/fruid.png"></image>
+                </view>
+                <view class="text">
+                  <text class="title">水果</text>
+                </view>
+              </view>
+
+              <view class="category-item">
+                <view class="icon">
+                  <image src="../../static/images/fruid.png"></image>
+                </view>
+                <view class="text">
+                  <text class="title">水果</text>
+                </view>
+              </view>
+
+              <view class="category-item">
+                <view class="icon">
+                  <image src="../../static/images/fruid.png"></image>
+                </view>
+                <view class="text">
+                  <text class="title">水果</text>
+                </view>
+              </view>
+              
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  </view>
+</view>
+

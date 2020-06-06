@@ -1,0 +1,21 @@
+<!--components/searchBox.wxml-->
+<!-- 组件模板 -->
+<view class="wrapper">
+  <slot></slot>
+    <view class='tit_seabox'>
+        <view class="tit_seabox_bar {{addflag?'tit_seabox_add':''}} {{searchflag?'tit_start_search':''}}">
+            <icon class="icon" type='search' size="48rpx"></icon>
+            <input class="search-input" type="text" bindinput="searchList" bindconfirm="endsearchList" bindfocus='getfocus' bindtap="handleTap" bindblur="blursearch" confirm-type='search' value='{{searchstr}}' placeholder='{{placeholder}}' />
+            <icon bindtap='activity_clear' wx:if="{{searchflag}}" type='clear' size="28rpx"></icon>
+        </view>
+        <view wx:if="{{searchflag}}" bindtap='cancelsearch' class="activity_seabtn">取消</view>
+        <view class='activity_add' wx:if="{{addflag}}">
+            <view class="image">
+                <image class="icon-image" bindtap='addhandle' src='{{addimg}}'></image>
+            </view>
+            <view class="text">
+                <text class="text-share">分享</text>
+            </view>
+        </view>
+    </view>
+</view>

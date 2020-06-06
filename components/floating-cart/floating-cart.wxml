@@ -1,0 +1,7 @@
+<!--components/floating-cart/floating-cart.wxml-->
+<view class="component" bindtap="handleTap">
+  <view class="content">
+    <image class="icon" src="../../static/images/cart.png"></image>
+    <text class="num" wx:if="{{num > 0}}">{{num}}</text>
+  </view>
+</view>

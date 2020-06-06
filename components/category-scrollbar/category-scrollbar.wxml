@@ -1,0 +1,4 @@
+<!--components/category-scrollbar/category-scrollbar.wxml-->
+  <scroll-view scroll-x="true">
+      scroll-view
+  </scroll-view>
