@@ -11,10 +11,16 @@
           <view class="temperature">{{temperature}}</view>
       </view>
   </view>
-  <view class="page-container">
+  <view class="page-container" style="padding-top: {{4*navHeight}}px;">
       <store-card></store-card>
       <searchbar addflag="true" addimg="../../static/images/share.png" placeholder="搜索商品" bind:handleTap="handleTap"></searchbar>
-      <category-scrollbar></category-scrollbar>
+      <category-scrollbar dataList="categoryList"></category-scrollbar>
+  </view>
+  
+  <view class="item-container">
+    <view class="items">
+        <product-item></product-item>
+      </view>
   </view>
 </view>
 

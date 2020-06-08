@@ -1,7 +1,9 @@
 /* pages/home/main.wxss */
 .custom-navbar{
+  position: fixed;
   width: 100%;
   background-color: red;
+  z-index: 9999;
 }
 .palce-holder-nav{
   width: 100%;
@@ -40,4 +42,12 @@
   padding-top: 12rpx;
   width: 84rpx;
   height: 84rpx;
+}
+.item-container {
+  background-color: #E9EDF1;
+  padding-top: 24rpx;
+}
+.item-container>.items {
+  width: 94%;
+  margin: 0 auto;
 }

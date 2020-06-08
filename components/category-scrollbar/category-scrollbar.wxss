@@ -1,35 +1,37 @@
 /* components/category-scrollbar/category-scrollbar.wxss */
-.demo-text-1 {
-  height: 100%;
-  background-color: pink;
-}
-.demo-text-2 {
-  height: 100%;
-  background-color: plum;
-}
-.demo-text-3 {
-  height: 100%;
-  background-color: purple;
+.swiper {
+  height: 340rpx;
 }
 
 .swiper-item {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
 }
+
 .category-item {
   position: relative;
-  width: 96rpx;
-  height: 96rpx;
-  margin: 12rpx;
+  width: 120rpx;
+  height: 120rpx;
+  margin: 16rpx 10rpx 16rpx 10rpx;
   display: inline-flex;
   flex-flow: column nowrap;
   align-items: center;
+  justify-content: center;
+  text-align: center;
 }
+
 .category-item .icon image {
-  width: 96rpx;
-  height: 96rpx;
+  max-width: 96rpx;
+  max-height: 96rpx;
 }
 
 .category-item .title {
   font-size: 24rpx;
+}
+
+.swiper-dot-box {
+  width: 100%;
+  height: 48rpx; 
 }

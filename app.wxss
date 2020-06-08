@@ -13,3 +13,21 @@
   width: 94%;
   margin: 0 auto;
 }
+.text-center {
+  text-align: center;
+}
+.data-value-color {
+  color: #FF7625;
+}
+.data-title-color {
+  color: #9F9F9F;
+}
+.block {
+  display: block;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}

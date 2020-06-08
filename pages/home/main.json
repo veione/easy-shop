@@ -2,6 +2,7 @@
   "usingComponents": {
     "store-card": "../../components/store-card/store-card",
     "searchbar": "../../components/searchbar/searchbar",
-    "category-scrollbar": "../../components/category-scrollbar/category-scrollbar"
+    "category-scrollbar": "../../components/category-scrollbar/category-scrollbar",
+    "product-item": "../../components/product-item/product-item"
   }
 }
