@@ -1,0 +1,133 @@
+/* pages/details/main.wxss */
+.container {
+  height: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.tabbar-container {
+  border-top: 1px solid #F3F2F6;
+  border-bottom: 1px solid #F3F2F6;
+}
+
+.title {
+  width: 100%;
+  height: 88rpx;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+ 
+.title-sel {
+  color: #24272c;
+  font-size: 32rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ 
+.title-sel  .line-style{
+  background: #fff;
+  height: 6rpx;
+  width: 40rpx;
+  position: relative;
+  margin-top: 10rpx;
+}
+ 
+.title-sel-selected{
+  color: #E70013;
+  font-size: 32rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title-sel-selected .line-style{
+  background: #E70013;
+  height: 6rpx;
+  width: 90rpx;
+  position: relative;
+  margin-top: 10rpx;
+}
+ 
+.swiper {
+  width: 100%;
+  flex: 1;
+  overflow: scroll;
+  margin: 0 auto;
+}
+ 
+.record-item {
+  margin-top: 10rpx;
+  background-color: white;
+  padding-bottom: 5rpx;
+  padding-top: 5rpx;
+  font-size: 30rpx;
+}
+ 
+.name{
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #eee;
+  padding: 2vh;
+  border-radius: 10rpx
+}
+
+.swiper-component {
+  height: 750rpx;
+}
+.swiperContainer {
+  position: relative;
+}
+.img {
+ width: 100%;
+ height: 100%
+}
+.imageCount {
+  width:120rpx;
+  height:50rpx;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius:40rpx;
+  line-height:50rpx;
+  color:#fff;
+  text-align:center;
+  font-size:26rpx;
+  position:absolute;
+  left:13px;
+  bottom:20rpx;
+}
+
+.indicator {
+  position: absolute;
+  right: 12rpx;
+  bottom: 10rpx;
+  display: flex;
+  justify-content: flex-end;
+  background-color: rgba(0, 0, 0, .3);
+  border-radius: 12rpx;
+  padding: 4rpx 12rpx;
+}
+.color-white {
+  color: white;
+}
+.dots{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10rpx;
+  display: flex;
+  justify-content: center;
+}
+.dots .dot{
+  margin: 0 5rpx;
+  width: 50rpx;
+  height: 8rpx;
+  background: #757575;
+  border-radius: 8rpx;
+  transition: all .6s;
+}
+.dots .dot.active{
+  width: 50rpx;
+  background: #fff;
+} 

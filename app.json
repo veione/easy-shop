@@ -6,7 +6,8 @@
     "pages/category/main",
     "pages/cart/main",
     "pages/user/main",
-    "pages/search/main"
+    "pages/search/main",
+    "pages/details/main"
   ],
   "window": {
     "navigationStyle": "custom"

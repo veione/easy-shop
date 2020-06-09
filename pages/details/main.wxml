@@ -1,0 +1,69 @@
+<!--pages/details/main.wxml-->
+<view class="container">
+	<view style="width:100%;height:80px;border-top:1px solid red;background-color:#f0f0f0;position:fixed;top:0;z-index:999;">
+		<navbar title-text="商品详情" back-icon="../../static/images/back@3x.png" background="#fff" bindback="back" navTitleStyle="left: 84px;" />
+		<view class='tabbar-container'>
+			<scroll-view scroll-y bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+				<!--Tab布局-->
+				<view class='title'>
+					<view class="{{0 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='0'>
+						<text>基本信息</text>
+						<hr class="line-style" />
+					</view>
+					<view class="{{1 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='1'>
+						<text>购买记录</text>
+						<hr class="line-style" />
+					</view>
+				</view>
+			</scroll-view>
+		</view>
+	</view>
+
+</view>
+
+<!--内容布局-->
+<view class="swiper-container">
+  <view style="height: 120px;"></view>
+	<scroll-view scroll-y="true" style="height: 100vh; width: 100vw;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+		<swiper class='swiper-component' bindchange='pagechange' current='{{currentIndex}}'>
+			<swiper-item class='swiper'>
+				<view class="page-section page-section-spacing swiper">
+					<view class="swiperContainer">
+						<swiper class='swiper-component' bindchange="swiperChange" autoplay="{{autoplay}}" duration="{{duration}}">
+							<block wx:for="{{imgUrls}}" wx:key="*this">
+								<swiper-item wx:key="*this">
+									<image src="{{item}}" class="slide-image" class='img' />
+								</swiper-item>
+							</block>
+						</swiper>
+						<view class="indicator">
+							<text class="color-white">{{current+1}}/{{imgUrls.length}}</text>
+						</view>
+						<!--<view class="dots">
+						<block wx:for="{{imgUrls}}" wx:key="*this">
+							<view class="dot{{index == current ? ' active' : ''}}"></view>
+						</block>
+					</view>-->
+					</view>
+				</view>
+				<view style="height: 100px;">Hello,World</view>
+				<view style="height: 100px;">Hello,World</view>
+				<view style="height: 100px;">Hello,World</view>
+				<view style="height: 100px;">Hello,World</view>
+				<view style="height: 100px;">Hello,World</view>
+				<view style="height: 100px;">Hello,World</view>
+				<view style="height: 100px;">Hello,World</view>
+				<view style="height: 100px;">Hello,World</view>
+				<view style="height: 100px;">Hello,World</view>
+			</swiper-item>
+			<swiper-item class='swiper'>
+				<view wx:for="{{secondList}}" wx:for-item="item" class='record-item' wx:key="*this">
+					<view class='name'>
+						<span>名称：{{item.name}}</span>
+						<span>面额：{{item.money}}</span>
+					</view>
+				</view>
+			</swiper-item>
+		</swiper>
+	</scroll-view>
+</view>

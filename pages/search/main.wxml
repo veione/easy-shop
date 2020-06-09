@@ -38,4 +38,3 @@
   </view>
   <floating-cart num="990" bind:handleTap="handleCartBtnTap"/>
 </view>
-

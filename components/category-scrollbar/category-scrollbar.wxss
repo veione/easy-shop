@@ -7,12 +7,12 @@
   display: flex;
   flex-flow: row wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .category-item {
   position: relative;
-  width: 120rpx;
+  width: 120rpx; 
   height: 120rpx;
   margin: 16rpx 10rpx 16rpx 10rpx;
   display: inline-flex;
