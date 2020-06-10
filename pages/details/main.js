@@ -22,6 +22,14 @@ Page({
       '../../static/images/product/20200609154218.jpg',
       '../../static/images/product/20200609154125.jpg',
     ],
+    detailImageUrls: [
+      '../../static/images/product/detail/20200610142353.jpg',
+      '../../static/images/product/detail/20200610142429.jpg',
+      '../../static/images/product/detail/20200610142437.jpg',
+      '../../static/images/product/detail/20200610142445.jpg',
+      '../../static/images/product/detail/20200610142454.jpg',
+      '../../static/images/product/detail/20200610142503.jpg',
+    ],
     current: 0,
   },
   swiperChange: function(e) {

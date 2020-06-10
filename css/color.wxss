@@ -1,0 +1,13 @@
+.color-red {
+  color: red;
+}
+.value-color {
+  color: #FF7320;
+}
+
+.title-color { 
+  color: #9F9F9F;
+}
+.color-black {
+  color: black;
+}

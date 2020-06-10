@@ -1,0 +1,21 @@
+/* 颜色 */
+.f999 {
+  color: #999;
+}
+
+.fff {
+  color: #ffffff;
+}
+
+/* 背景颜色 */
+.bg-green {
+  background: green;
+}
+
+.bg-gray {
+  background: gray;
+}
+
+.bg-fff {
+  background: #ffffff;
+}
