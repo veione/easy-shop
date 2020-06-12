@@ -1,2 +1,85 @@
 <!--pages/user/main.wxml-->
-<text>用户中心</text>
+<view class="container primary-bg">
+	<view class="title-bar fixed">
+		<navbar title-text="个人中心" home-icon="../../static/images/settings.png" background="red" color="white" fontSize="18" bindhome="handleSettings" navTitleStyle="color: white;" />
+	</view>
+	<view class="profile bg-red" style="padding-top: {{titleBarHeight}}">
+		<image class="avatar" src="../../static/images/user.png"></image>
+		<text class="nick color-white">Github</text>
+		<view class="qrcode">
+			<image class="icon" src="../../static/images/qrcode.png"></image>
+			<text class="text color-white f12">提货二维码</text>
+		</view>
+	</view>
+	<view class="page-spacing mb-10">
+		<view class="order-bar bg-white">
+			<view class="title">
+				<text class="f16">我的订单</text>
+			</view>
+			<view class="items">
+				<view class="item">
+					<image class="icon" src="../../static/images/usercenter/icon-order-list.png"></image>
+					<text class="text f14">全部订单</text>
+				</view>
+				<view class="item">
+					<image class="icon" src="../../static/images/usercenter/icon-wallet.png"></image>
+					<text class="text f14">代付款</text>
+				</view>
+				<view class="item">
+					<image class="icon" src="../../static/images/usercenter/icon-car.png"></image>
+					<text class="text f14">待提货</text>
+				</view>
+				<view class="item">
+					<image class="icon" src="../../static/images/usercenter/icon-extract.png"></image>
+					<text class="text f14">已提货</text>
+				</view>
+			</view>
+		</view>
+		<view class="store-bar bg-white mt-12">
+			<view class="extract-item">
+				<view class="title">
+					<text class="f16">我的当前自提点</text>
+				</view>
+				<view class="switch-store">
+					<view class="right-arrow"></view>
+					<text class="f14 color-orange pr-25">切换自提点</text>
+				</view>
+			</view>
+			<view class="store-info pt-10">
+				<view class="store-name mt-5">
+					<text class="f16 color-red">长沙梅溪湖菜鸟驿站</text>
+				</view>
+				<view class="store-addr mt-5">
+					<text class="value-title-color">门店地址：</text>
+					<text class="value-color">湖南省长沙市岳麓区梅溪湖菜鸟驿站</text>
+				</view>
+				<view class="store-tel mt-5">
+					<text class="value-title-color">门店电话：</text>
+					<text class="value-color">18888888888</text>
+					<icon class="iconfont icon-tell color-FF8B46"></icon>
+				</view>
+				<view class="store-problem mt-5">
+					<icon class="iconfont icon-security color-FF8B46 mr-5"></icon>
+					<text class="f14 color-secondary">如果您购买的商品有任何问题，请直接与购买的门店联系！门店将为您处理，让您售后无忧！</text>
+				</view>
+			</view>
+		</view>
+		<view class="contact-bar">
+			<view class="item-title">
+				<icon class="iconfont icon-zhengzhouyinhangAPPtubiaodiergaolunkuohuachunse-28 color-548AFF" style="font-size: 36rpx;"></icon>
+				<text class="f14">帮帮忙热线</text>
+			</view>
+			<view class="item-desc">
+				<view class="f14 color-secondary">如果您找不到购物的提货的门店，</view>
+				<view class="f14 color-secondary">
+				请致电 <text class="value-color">4008208820</text>
+				<icon class="iconfont icon-tell color-FF8B46"></icon>
+				</view>
+			</view>
+		</view>
+		<view class="btn-bar">
+			<button class="btn color-white bg-red">去购物</button>
+		</view>
+	</view>
+
+</view>

@@ -43,6 +43,14 @@ Component({
         navTitleStyle: {
             type: String,
             value: ''
+        },
+        homeStyle: {
+            type: String,
+            value: ''
+        },
+        backStyle: {
+            type: String,
+            value: ''
         }
     },
     attached: function(){
@@ -75,7 +83,9 @@ Component({
             var that  = this
                 , containerStyle
                 , textStyle
-                , iconStyle;
+                , iconStyle
+                , backStyle
+                , homeStyle;
             containerStyle = [
                 'background:' + that.data.background
                 ].join(';');
@@ -87,10 +97,24 @@ Component({
                 'width: ' + that.data.iconWidth + 'px',
                 'height: ' + that.data.iconHeight + 'px'
             ].join(';');
+            if (!that.data.backIcon) {
+                homeStyle = [
+                    'left: 16px'  
+                ].join(';');
+            } else {
+                homeStyle = [
+                    that.data.homeStyle
+                ].join(';');
+            }
+            backStyle = [
+                that.data.backStyle
+            ].join(';');
             that.setData({
                 containerStyle: containerStyle,
                 textStyle: textStyle,
-                iconStyle: iconStyle
+                iconStyle: iconStyle,
+                backStyle: backStyle,
+                homeStyle: homeStyle
             })
         },
         // 返回事件

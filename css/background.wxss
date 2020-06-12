@@ -1,10 +1,7 @@
 /* 颜色 */
-.f999 {
-  color: #999;
-}
 
-.fff {
-  color: #ffffff;
+.primary-bg {
+  background-color: #E9EDF1;
 }
 
 /* 背景颜色 */
@@ -18,4 +15,20 @@
 
 .bg-fff {
   background: #ffffff;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.bg-red {
+  background-color: red;
+}
+
+.add-cart-bg-color {
+  background-color: #FF7320;
+}
+
+.buy-now-bg-color {
+  background-color: #E60012;
 }

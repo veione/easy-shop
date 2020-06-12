@@ -1,8 +1,8 @@
-page {
-  background: #E9EDF1;
-}
-.page-primary-bg {
-  background-color: #E9EDF1;
+
+.page-spacing {
+  position: relative;
+  width: 96%;
+  margin: 0 auto;
 }
 .page-secondary-bg {
   background-color: white;

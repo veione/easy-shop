@@ -1,2 +1,6 @@
 <!--pages/category/main.wxml-->
-<text>分类</text>
+<view class="container">
+	<view class="title-bar fixed  bg-white">
+		<navbar title-text="分类" home-icon="../../static/images/settings.png" background="white" color="black" fontSize="18"/>
+	</view>
+</view>

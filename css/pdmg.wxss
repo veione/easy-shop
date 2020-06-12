@@ -8,6 +8,10 @@
   margin-top: 20rpx;
 }
 
+.mt-12 {
+  margin-top: 24rpx;
+}
+
 .mt-15 {
   margin-top: 30rpx;
 }
@@ -197,4 +201,12 @@
 
 .pr-30 {
   padding-right: 60rpx;
+}
+
+.pd-10 {
+  padding: 20rpx;
+}
+
+.pd-20 {
+  padding: 40rpx
 }
