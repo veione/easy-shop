@@ -38,7 +38,7 @@
 	</view>
 
   <!--checkout floating button-->
-  <view class="checkout-items fixed">
+  <view class="checkout-items fixed bg-white">
     <view class="item-check-all">
 				<checkbox></checkbox>全选
 		</view>
@@ -48,7 +48,10 @@
       <text>￥0</text>
       </view>
       
-      <button>去结算</button>
+      <view class="btn-checkout bg-red">
+				<text class="text-center">去结算</text>
+				<text class="count">(0)</text>
+			</view>
     </view>
   </view>
 </view>
