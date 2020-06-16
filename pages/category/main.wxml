@@ -1,6 +1,33 @@
 <!--pages/category/main.wxml-->
 <view class="container">
 	<view class="title-bar fixed  bg-white">
-		<navbar title-text="分类" home-icon="../../static/images/settings.png" background="white" color="black" fontSize="18"/>
+		<navbar title-text="分类" home-icon="../../static/images/settings.png" background="white" color="black" fontSize="18" />
+		<view class="page-spacing">
+			<searchbar placeholder="搜索商品"></searchbar>
+		</view>
+	</view>
+
+	<view class="menus">
+		<view class="menu-left">
+			<scroll-view class="" scroll-y scroll-with-animation="{{true}}" style="height: 100vh;">
+				<view class="cate-item {{curIndex==index?'active':''}} text-center" wx:for="{{categoryList}}" wx:key="{{item.id}}" data-id="{{item.id}}" data-index="{{index}}" bindtap="switchCategory">
+					<text>{{item.title}}</text>
+				</view>
+			</scroll-view>
+		</view>
+		<view class="menu-right bg-white">
+			<swiper vertical="true" class="" current="{{toView}}" style="height: 100vh;">
+				<swiper-item wx:for="{{detail}}" wx:key="{{item.id}}">
+					<scroll-view class="cate-box" id="{{item.id}}" scroll-y>
+						<view class="cate-product">
+							<view class="product-list" bindtap="productDetails" wx:for="{{item.productList}}" wx:key="{{index}}" wx:for-item="product">
+								<category-item></category-item>
+							</view>
+						</view>
+					</scroll-view>
+				</swiper-item>
+			</swiper>
+		</view>
+
 	</view>
 </view>

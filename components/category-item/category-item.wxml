@@ -1,0 +1,45 @@
+<!--components/product-item/product-item.wxml-->
+<view class="component-container">
+	<view class="icon">
+		<image class="item-icon" src="http://img2.imgtn.bdimg.com/it/u=1118196735,1751162759&fm=15&gp=0.jpg"></image>
+		<view class="detail-view">
+			<view class="text">点击查看详情</view>
+		</view>
+	</view>
+	<view class="item-content">
+		<view class="desc">
+			<view class="title">
+				<text class="spu-title">达利园美焙辰汤熟吐司面包 400g/袋达利园美焙辰汤熟吐司面包 400g/袋达利园美焙辰汤熟吐司面包 400g/袋达利园美焙辰汤熟吐司面包 400g/袋达利园美焙辰汤熟吐司面包 400g/袋</text>
+			</view>
+			<view class="data">
+				<text class="data-value-color">4.1万</text>
+				<text class="data-title data-title-color">人气值</text>
+			</view>
+		</view>
+		<view class="sale-data-item">
+			<view class="sale-date fl">
+				<text class="block data-value-color">预售时间：06月08号</text>
+				<text class="block data-value-color">提货时间：06月09号</text>
+			</view>
+			<view class="sale-data fr text-right">
+				<text class="data-value-color">限量15000份</text>
+				<view class="block text-bold">今日已售<label class="color-red">200</label>份</view>
+			</view>
+		</view>
+		<view class="btn-wrapper cls">
+			<view class="fl">
+				<view class="item-price cls">
+					<view class="current-price-box">
+						￥<text class="current-price text-bold">6.9</text>
+					</view>
+					<view class="original-price-box">
+						<text class="original-price">￥10.9</text>
+					</view>
+				</view>
+			</view>
+			<view class="btn btn-danger fr">
+				<text class="text-bold">加入购物车</text>
+			</view>
+		</view>
+	</view>
+</view>

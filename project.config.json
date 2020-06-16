@@ -61,8 +61,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/cart/main",
-					"pathName": "pages/cart/main",
+					"name": "pages/category/main",
+					"pathName": "pages/category/main",
 					"query": "",
 					"scene": null
 				}

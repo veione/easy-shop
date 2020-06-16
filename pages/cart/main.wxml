@@ -14,6 +14,7 @@
 	</view>
 
 	<view class="items page-spacing mt-10">
+
 		<view class="item pl-10 pr-10">
 			<view class="item-check">
 				<checkbox></checkbox>
@@ -33,25 +34,26 @@
 					</view>
 				</view>
 			</view>
-
+      <view class="btn-del bg-red color-white" catchtap="del" data-index="{{index}}">删除</view>
 		</view>
+
 	</view>
 
-  <!--checkout floating button-->
-  <view class="checkout-items fixed bg-white">
-    <view class="item-check-all">
-				<checkbox></checkbox>全选
+	<!--checkout floating button-->
+	<view class="checkout-items fixed bg-white">
+		<view class="item-check-all">
+			<checkbox></checkbox>全选
 		</view>
-    <view class="checkout-info">
-      <view>
-      <text>合计：</text>
-      <text>￥0</text>
-      </view>
-      
-      <view class="btn-checkout bg-red">
+		<view class="checkout-info">
+			<view>
+				<text>合计：</text>
+				<text>￥0</text>
+			</view>
+
+			<view class="btn-checkout bg-red">
 				<text class="text-center">去结算</text>
 				<text class="count">(0)</text>
 			</view>
-    </view>
-  </view>
+		</view>
+	</view>
 </view>

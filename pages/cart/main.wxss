@@ -55,6 +55,7 @@
   height: 258rpx;
   border-radius: 12rpx;
   background-color: white;
+  overflow: hidden;
 }
 
 .items .item .icon {
@@ -173,4 +174,18 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
   text-align: center;
   color: white;
   padding: 36rpx 0;
+}
+
+.btn-del {
+  background-color: orangered;
+  width: 180rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  -webkit-transform: translateX(180rpx);
+  transform: translateX(180rpx);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
 }

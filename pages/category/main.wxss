@@ -1,1 +1,43 @@
 /* pages/category/main.wxss */
+/*/@import "/css/global.wxss";*/
+@import "/css/font.wxss";
+@import "/css/background.wxss";
+@import "/css/color.wxss";
+
+.menus {
+  position: relative;
+  width: 100%;
+  display: flex;
+  background-color: #F5F7FA;
+}
+
+.cate-item {
+  height: 48rpx;
+  padding: 24rpx 0;
+  color: #6D798F;
+}
+
+.cate-item.active {
+  position: relative;
+  color: black;
+  background-color: white;
+}
+
+.cate-item.active::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 6rpx;
+  height: 48rpx;
+  background-color: red;
+}
+
+.menu-left {
+  width: 20%;
+}
+
+.menu-right {
+  width: 80%;
+}
