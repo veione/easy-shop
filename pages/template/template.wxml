@@ -1,0 +1,21 @@
+<!--template.wxml-->
+<template name="msgItem">
+	<view>
+		<text class="info">{{data}}</text>
+	</view>
+</template>
+
+<template name="orderManageEmptyData">
+	<view class="order-empty-wrapper">
+		<view class="icon">
+			<image class="img" src="/static/images/order/order-list.png" mode="aspectFit"></image>
+		</view>
+		<view class="tips">
+			<text>{{showText}}</text>
+		</view>
+		<view class="btn-group">
+			<button wx:if="{{showShoppingBtn}}" class="btn btn-shopping">马上去购物</button>
+			<button wx:if="{{showHistoryBtn}}" class="btn btn-history">查看历史订单</button>
+		</view>
+	</view>
+</template>

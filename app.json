@@ -1,13 +1,14 @@
 {
   "pages":[
     "pages/home/main",
-    "pages/index/main",
-    "pages/logs/main",
     "pages/category/main",
     "pages/cart/main",
     "pages/user/main",
     "pages/search/main",
-    "pages/details/main"
+    "pages/details/main",
+    "pages/order/confirm/main",
+    "pages/order/manage/main",
+    "pages/order/search/main"
   ],
   "window": {
     "navigationStyle": "custom"

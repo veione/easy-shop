@@ -8,7 +8,14 @@ Page({
    */
   data: {
     navHeight: app.globalData.navHeight,
-    titleBarHeight: 0
+    titleBarHeight: 0,
+    displayPickupDialog: false,
+    orderMenus: [
+      {id: 1001, type: 0, 'icon': '/static/images/usercenter/icon-order-list.png', name: '全部订单'},
+      {id: 1002, type: 1, 'icon': '/static/images/usercenter/icon-wallet.png', name: '代付款'},
+      {id: 1003, type: 2, 'icon': '/static/images/usercenter/icon-car.png', name: '待提货'},
+      {id: 1004, type: 3, 'icon': '/static/images/usercenter/icon-extract.png', name: '已提货'},
+    ]
   },
 
   /**
@@ -32,7 +39,6 @@ Page({
     //选择id
     var that = this;
     query.select('.title-bar').boundingClientRect(function (rect) {
-      console.log(rect.width, rect.height)
       that.setData({
         titleBarHeight: rect.height + 'px'
       })
@@ -75,5 +81,25 @@ Page({
   },
   handleSettings: function() {
     console.log('setting button tap event.')
+  },
+  goShopping: function() {
+    wx.switchTab({
+      url: '/pages/home/main',
+    })
+  },
+  openPickupDialog: function() {
+    this.setData({
+      displayPickupDialog: true
+    })
+  },
+  closePickupDialog: function() {
+    this.setData({
+      displayPickupDialog: false
+    })
+  },
+  gotoOrderManage: function(e) {
+    wx.navigateTo({
+      url: '/pages/order/manage/main?index=' + e.currentTarget.dataset.index,
+    })
   }
 })

@@ -18,7 +18,7 @@
 		<view class="menu-right bg-white">
 			<swiper vertical="true" class="" current="{{toView}}" style="height: 100vh;">
 				<swiper-item wx:for="{{detail}}" wx:key="{{item.id}}">
-					<scroll-view class="cate-box" id="{{item.id}}" scroll-y>
+					<scroll-view class="cate-box" id="{{item.id}}" scroll-y style="height: 100vh;">
 						<view class="cate-product">
 							<view class="product-list" bindtap="productDetails" wx:for="{{item.productList}}" wx:key="{{index}}" wx:for-item="product">
 								<category-item></category-item>

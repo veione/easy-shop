@@ -5,7 +5,7 @@
   </view>
   <view class="icon">
 	  <image class="item-icon" src="http://img2.imgtn.bdimg.com/it/u=1118196735,1751162759&fm=15&gp=0.jpg"></image>
-    <view class="detail-view">
+    <view class="detail-view" bindtap="gotoProductDetail">
       <view class="text">点击查看详情</view>
     </view>
   </view>

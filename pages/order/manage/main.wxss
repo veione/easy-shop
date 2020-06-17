@@ -1,0 +1,72 @@
+/* pages/order/manage/main.wxss */
+@import '/css/global.wxss';
+@import '/css/background.wxss';
+@import '/css/color.wxss';
+@import '/css/font.wxss';
+@import '/css/pdmg.wxss';
+@import '/assets/iconfont.wxss';
+@import '/pages/template/template.wxss';
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #EEF2F5;
+}
+
+.navbar {
+  width: 100%;
+  z-index: 999;
+}
+
+.navbar::after {
+  content: '';
+  display: block;
+}
+
+.tabbar {
+  position: relative;
+  width: 100%;
+  z-index: 999;
+  background-color: white;
+}
+
+.tabbar .items {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.tabbar .items .item {
+  padding: 24rpx 0;
+  border-bottom: 4rpx solid transparent;
+}
+
+.tabbar .items>.active {
+  color: red;
+  border-bottom: 4rpx solid red;
+}
+
+.searchbar {
+  width: 100%;
+  background-color: white;
+}
+
+.searchbar .wrapper {
+  width: 94%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: start;
+  align-items: center;
+  border-radius: 48rpx;
+  padding: 8rpx;
+  background-color: #EEF2F5;
+}
+
+.searchbar .wrapper .input-field {
+  width: 100%;
+  font-size: 28rpx;
+}

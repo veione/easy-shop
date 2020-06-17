@@ -1,0 +1,63 @@
+<!--pages/order/manage/main.wxml-->
+<import src="/pages/template/template.wxml" />
+
+<view class="container primary-bg">
+	<view class="navbar" style='height:{{navBarHeight}}'>
+		<view class="fixed width100 titlebar">
+			<navbar title-text="我的订单" back-icon="/static/images/back@3x.png" background="white" color="black" fontSize="18" navTitleStyle="color: white;" />
+		</view>
+	</view>
+	<scroll-view class="content" scroll-y="true" style="height: {{contentHeight}};">
+		<view class="tabbar-wrapper" style="height: {{tabbarHeight}};">
+			<view class="fixed width100 tabbar-box">
+				<view class="searchbar">
+					<view class="wrapper">
+						<icon class="icon" type='search' size="48rpx"></icon>
+						<input class="input-field" placeholder="商品名称（仅支持三个月以内的订单）" bindtap="gotoOrderSearch"></input>
+					</view>
+				</view>
+				<view class="tabbar">
+					<view class="items">
+						<view wx:for="{{tabbarItems}}" class="item {{currentTab==index ? 'active' : ''}}" data-index="{{index}}" bindtap="swichNav" wx:key="id">{{item.name}}</view>
+					</view>
+				</view>
+			</view>
+		</view>
+
+		<swiper current="{{currentTab}}" class="swiper-box" duration="300" bindchange="bindNavChange" style="height: {{windowRemainHeight}};">
+			<swiper-item>
+				<view class="items" wx:if="{{orderList.length != 0}}">
+            订单列表
+				</view>
+				<block wx:else>
+					<template is="orderManageEmptyData" data="{{showHistoryBtn: true, showText: '近三个月内您还没有相关订单'}}"></template>
+				</block>
+			</swiper-item>
+			<swiper-item>
+				<view class="items" wx:if="{{orderList.length != 0}}">
+            订单列表
+				</view>
+				<block wx:else>
+					<template is="orderManageEmptyData" data="{{showShoppingBtn: true, showText: '您还没有相关的订单'}}"></template>
+				</block>
+			</swiper-item>
+			<swiper-item>
+				<view class="items" wx:if="{{orderList.length != 0}}">
+            订单列表
+				</view>
+				<block wx:else>
+					<template is="orderManageEmptyData" data="{{showShoppingBtn: true, showText: '您还没有相关的订单'}}"></template>
+				</block>
+			</swiper-item>
+			<swiper-item>
+				<view class="items" wx:if="{{orderList.length != 0}}">
+            订单列表
+				</view>
+				<block wx:else>
+					<template is="orderManageEmptyData" data="{{showHistoryBtn: true, showText: '近三个月内您还没有相关订单'}}"></template>
+				</block>
+			</swiper-item>
+		</swiper>
+	</scroll-view>
+
+</view>

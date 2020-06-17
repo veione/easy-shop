@@ -3,6 +3,7 @@
 @import '../../css/color.wxss';
 @import '../../css/pdmg.wxss';
 @import '../../css/global.wxss';
+@import '../../css/background.wxss';
 
 .container {
   /* height: 100%;

@@ -41,3 +41,7 @@
 .menu-right {
   width: 80%;
 }
+
+.cate-product {
+  padding-bottom: 128rpx;
+}

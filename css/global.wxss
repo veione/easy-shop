@@ -1,12 +1,13 @@
-
 .page-spacing {
   position: relative;
   width: 96%;
   margin: 0 auto;
 }
+
 .page-secondary-bg {
   background-color: white;
 }
+
 .bd {
   border: 1px solid;
 }
@@ -108,4 +109,8 @@
 .section-spacing {
   width: 96%;
   margin: 0 auto;
+}
+
+.width100 {
+  width: 100%;
 }

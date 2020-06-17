@@ -99,5 +99,12 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  switchCategory: function(e) {
+    var index = e.currentTarget.dataset.index;
+    this.setData({
+      curIndex: index,
+      toView: index
+    })
   }
 })

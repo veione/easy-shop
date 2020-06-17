@@ -44,7 +44,37 @@ const formatCategoryToPageData = (dataList, rowSize) => {
   }
 }
 
+const isObject = (obj)=>{
+  return (typeof obj=='object')&&obj.constructor==Object;
+}
+
+const  isFunction=(obj)=>{
+  return (typeof obj=='function')&&obj.constructor==Function;
+}
+
+const isDate=(obj)=>{
+  return (typeof obj=='object')&&obj.constructor==Date;
+}
+
+const isNumber=(obj)=>{
+  return (typeof obj=='number')&&obj.constructor==Number;
+}
+
+const isString=(obj)=>{
+  return (typeof obj=='string')&&obj.constructor==String;
+}
+
+const isArray=(obj)=>{
+  return (typeof obj=='object')&&obj.constructor==Array;
+}
+
 module.exports = {
   formatTime: formatTime,
-  formatCategoryToPageData: formatCategoryToPageData
+  formatCategoryToPageData: formatCategoryToPageData,
+  isObject: isObject,
+  isArray: isArray,
+  isString: isString,
+  isNumber: isNumber,
+  isDate: isDate,
+  isFunction: isFunction
 }

@@ -1,4 +1,4 @@
-// pages/logs/main.js
+// pages/order/confirm/main.js
 Page({
 
   /**
