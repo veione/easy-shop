@@ -1,8 +1,10 @@
-.navbar{
+.navbar {
     position: relative;
     width: 100%;
 }
-.back-icon, .home-icon{
+
+.back-icon,
+.home-icon {
     width: 28px;
     height: 100%;
     position: absolute;
@@ -10,23 +12,29 @@
     top: 50%;
     display: flex;
 }
-.back-icon{
+
+.back-icon {
     left: 16px;
 }
-.home-icon{
+
+.home-icon {
     left: 44px
 }
-.back-icon image{
+
+.back-icon .icon {
     width: 28px;
     height: 28px;
     margin: auto;
 }
-.home-icon image{
+
+.home-icon .icon {
     width: 20px;
     height: 20px;
     margin: auto;
 }
-.nav-title, .nav-icon{
+
+.nav-title,
+.nav-icon {
     position: absolute;
     transform: translate(-50%, -50%);
     left: 50%;

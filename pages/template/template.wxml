@@ -19,3 +19,16 @@
 		</view>
 	</view>
 </template>
+
+
+<template name="searchProductEmptyData">
+	<view class="product-empty-wrapper">
+		<view class="icon">
+			<image class="img" src="/static/images/order/order-list.png" mode="aspectFit"></image>
+		</view>
+		<view class="tips">
+			<text class="tips-text">{{showText}}</text>
+			<text class="suggest-text">{{suggestText}}</text>
+		</view>
+	</view>
+</template>

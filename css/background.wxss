@@ -32,3 +32,7 @@
 .buy-now-bg-color {
   background-color: #E60012;
 }
+
+.checkout-bg-gray {
+  background-color: #D8D8D8;
+}

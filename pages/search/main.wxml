@@ -1,40 +1,45 @@
-<!--pages/category/main.wxml-->
-<view class="container">
-  <navbar 
-    title-text="搜索商品"
-    back-icon="../../static/images/back@3x.png"
-    background="#fff"
-    bindback="back"
-    navTitleStyle="left: 84px;"/>
-  <view class="page-container">
-    <view class="searchbar-box">
-      <searchbar class="searchbar" placeholder="搜索商品关键字或名称，搜索商品"/>
-    </view>
-    <view class="history">
-      <text class="text text-history">历史搜索</text>
-      <view class="content">
-        <text>风扇</text>
-        <text>手机</text>
-        <text>空调</text>
-        <text>短袖长衣服短袖长衣服短袖长衣服短袖长衣服短袖长衣服短袖长衣服短袖长衣服</text>
-        <text>老人机</text>
-        <text>冰淇淋蛋挞</text>
-        <text>奶茶冰淇淋</text>
-        <text>风扇</text>
-        <text>手机</text>
-        <text>空调</text>
-        <text>短袖长衣服短袖长衣服短袖长衣服短袖长衣服短袖长衣服短袖长衣服短袖长衣服</text>
-        <text>老人机</text>
-        <text>冰淇淋蛋挞</text>
-        <text>奶茶冰淇淋</text>
-      </view>
-    </view>
-    <view class="btn-box">
-      <button class='btn btn-icon' bindtap="handleClearHistory">
-        <image class='icon' src='../../static/images/delete.png'></image>
-        <view>清空历史记录</view>
-      </button>
-    </view>
-  </view>
-  <floating-cart num="990" bind:handleTap="handleCartBtnTap"/>
+<!--pages/order/search/main.wxml-->
+<import src="/pages/template/template.wxml" />
+
+<view class="container primary-bg">
+	<view class="navbar" style='height:{{navBarHeight}}'>
+		<view class="fixed width100 titlebar">
+			<navbar title-text="搜索商品" back-icon="/static/images/back@3x.png" background="white" color="black" fontSize="18" navTitleStyle="color: white;" />
+			<view class="searchbar">
+				<view class="item">
+					<view class="wrapper">
+						<icon class="icon" type='search' size="48rpx"></icon>
+						<input class="input-field" type="text" placeholder="搜索商品关键字或名称，搜索商品" confirm-type="search" value="{{keyword}}" bindinput="onInput" bindconfirm="onSearch"></input>
+						<icon class="icon" type='clear' size="42rpx" color="#D8D8D8" bindtap="onClearSearch" wx:if="{{keyword.length > 0}}"></icon>
+					</view>
+					<view class="btn btn-query" bindtap="onSearch">搜索</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<scroll-view class="content page-spacing" scroll-y="true" style="height: {{contentHeight}};">
+		<view class="history {{showSearchHistory && searchHistorys.length > 0 ? 'show' : 'hide'}}">
+			<view class="title">历史搜索</view>
+			<view class="items">
+				<text class="item" wx:for="{{searchHistorys}}" wx:key="index" data-value="{{item.value}}" bindtap="onSearchHistoryValue">{{item.value}}</text>
+			</view>
+			<view class="btn-box">
+				<button class='btn btn-icon' bindtap="onClearSearchHistory">
+					<image class='icon' src='/static/images/delete.png'></image>
+					<view>清空历史记录</view>
+				</button>
+			</view>
+		</view>
+
+		<view class="order-items {{showSearchHistory ? 'hide' : 'show'}}">
+			<block wx:if="historyOrderList.length > 0">
+				<view class="item" wx:for="{{historyOrderList}}" wx:key="index">{{index}}</view>
+			</block>
+			<view class="empty-data {{historyOrderList.length == 0 ? 'show' : 'hide'}}" style="height: {{contentHeight}};">
+				<template is="searchProductEmptyData" data="{{showText: '抱歉！未搜索到相关的商品', suggestText: '请换一个关键词试试'}}"></template>
+			</view>
+		</view>
+
+
+	</scroll-view>
 </view>

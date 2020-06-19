@@ -1,2 +1,45 @@
 <!--pages/order/search/main.wxml-->
-<text>pages/order/search/main.wxml</text>
+<import src="/pages/template/template.wxml" />
+
+<view class="container primary-bg">
+	<view class="navbar" style='height:{{navBarHeight}}'>
+		<view class="fixed width100 titlebar">
+			<navbar title-text="搜索管理" back-icon="/static/images/back@3x.png" background="white" color="black" fontSize="18" navTitleStyle="color: white;" />
+			<view class="searchbar">
+				<view class="item">
+					<view class="wrapper">
+						<icon class="icon" type='search' size="48rpx"></icon>
+						<input class="input-field" type="text" placeholder="商品名称（仅支持三个月以内的订单）" confirm-type="search" value="{{keyword}}" bindinput="onInput" bindconfirm="onSearch"></input>
+						<icon class="icon" type='clear' size="42rpx" color="#D8D8D8" bindtap="onClearSearch" wx:if="{{keyword.length > 0}}"></icon>
+					</view>
+					<view class="btn btn-query" bindtap="onSearch">搜索</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<scroll-view class="content page-spacing" scroll-y="true" style="height: {{contentHeight}};">
+		<view class="history {{showSearchHistory && searchHistorys.length > 0 ? 'show' : 'hide'}}">
+			<view class="title">历史搜索</view>
+			<view class="items">
+				<text class="item" wx:for="{{searchHistorys}}" wx:key="index" data-value="{{item.value}}" bindtap="onSearchHistoryValue">{{item.value}}</text>
+			</view>
+			<view class="btn-box">
+				<button class='btn btn-icon' bindtap="onClearSearchHistory">
+					<image class='icon' src='/static/images/delete.png'></image>
+					<view>清空历史记录</view>
+				</button>
+			</view>
+		</view>
+
+		<view class="order-items {{showSearchHistory ? 'hide' : 'show'}}">
+			<block wx:if="historyOrderList.length > 0">
+				<view class="item" wx:for="{{historyOrderList}}" wx:key="index">{{index}}</view>
+			</block>
+			<view class="empty-data {{historyOrderList.length == 0 ? 'show' : 'hide'}}" style="height: {{contentHeight}};">
+				<template is="orderManageEmptyData" data="{{showText: '您还没有相关订单'}}"></template>
+			</view>
+		</view>
+
+
+	</scroll-view>
+</view>

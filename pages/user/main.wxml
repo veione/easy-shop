@@ -1,74 +1,79 @@
 <!--pages/user/main.wxml-->
 <view class="container primary-bg">
-	<view class="title-bar fixed">
-		<navbar title-text="个人中心" home-icon="../../static/images/settings.png" background="red" color="white" fontSize="18" bindhome="handleSettings" navTitleStyle="color: white;" />
-	</view>
-	<view class="profile bg-red" style="padding-top: {{titleBarHeight}}">
-		<image class="avatar" src="../../static/images/user.png"></image>
-		<text class="nick color-white">Github</text>
-		<view class="qrcode" bindtap="openPickupDialog">
-			<image class="icon" src="../../static/images/qrcode.png"></image>
-			<text class="text color-white f12">提货码</text>
+	<view class="navbar" style='height:{{navBarHeight}}'>
+		<view class="fixed width100 titlebar">
+			<navbar title-text="个人中心" home-icon="/static/images/settings.png" background="red" color="white" fontSize="18" bindhome="handleSettings" navTitleStyle="color: white;" />
 		</view>
 	</view>
-	<view class="page-spacing mb-10">
-		<view class="order-bar bg-white">
-			<view class="title">
-				<text class="f16">我的订单</text>
-			</view>
-			<view class="items">
-				<view class="item" bindtap="gotoOrderManage" wx:for="{{orderMenus}}" data-index="{{item.type}}" wx:key="index">
-					<image class="icon" src="{{item.icon}}"></image>
-					<text class="text f14">{{item.name}}</text>
-				</view>
+
+	<scroll-view class="section" style="height: {{contentHeight}};" scroll-y="true">
+		<view class="profile bg-red">
+			<image class="avatar" src="/static/images/user.png"></image>
+			<text class="nick color-white">Github</text>
+			<view class="qrcode" bindtap="openPickupDialog">
+				<image class="icon" src="/static/images/qrcode.png"></image>
+				<text class="text color-white f12">提货码</text>
 			</view>
 		</view>
-		<view class="store-bar bg-white mt-12">
-			<view class="extract-item">
+		<view class="page-spacing mb-10 content">
+			<view class="order-bar bg-white">
 				<view class="title">
-					<text class="f16">我的当前自提点</text>
+					<text class="f16">我的订单</text>
 				</view>
-				<view class="switch-store">
-					<view class="right-arrow"></view>
-					<text class="f14 color-orange pr-25">切换自提点</text>
+				<view class="items">
+					<view class="item" bindtap="gotoOrderManage" wx:for="{{orderMenus}}" data-index="{{item.type}}" wx:key="index">
+						<image class="icon" src="{{item.icon}}"></image>
+						<text class="text f14">{{item.name}}</text>
+					</view>
 				</view>
 			</view>
-			<view class="store-info pt-10">
-				<view class="store-name mt-5">
-					<text class="f16 color-red">长沙梅溪湖菜鸟驿站</text>
+			<view class="store-bar bg-white mt-12">
+				<view class="extract-item">
+					<view class="title">
+						<text class="f16">我的当前自提点</text>
+					</view>
+					<view class="switch-store">
+						<view class="right-arrow"></view>
+						<text class="f14 color-orange pr-25">切换自提点</text>
+					</view>
 				</view>
-				<view class="store-addr mt-5">
-					<text class="value-title-color">门店地址：</text>
-					<text class="value-color">湖南省长沙市岳麓区梅溪湖菜鸟驿站</text>
+				<view class="store-info pt-10">
+					<view class="store-name mt-5">
+						<text class="f16 color-red">长沙梅溪湖菜鸟驿站</text>
+					</view>
+					<view class="store-addr mt-5">
+						<text class="value-title-color">门店地址：</text>
+						<text class="value-color">湖南省长沙市岳麓区梅溪湖菜鸟驿站</text>
+					</view>
+					<view class="store-tel mt-5">
+						<text class="value-title-color">门店电话：</text>
+						<text class="value-color">18888888888</text>
+						<icon class="iconfont icon-tell color-FF8B46"></icon>
+					</view>
+					<view class="store-problem mt-5">
+						<icon class="iconfont icon-security color-FF8B46 mr-5"></icon>
+						<text class="f14 color-secondary">如果您购买的商品有任何问题，请直接与购买的门店联系！门店将为您处理，让您售后无忧！</text>
+					</view>
 				</view>
-				<view class="store-tel mt-5">
-					<text class="value-title-color">门店电话：</text>
-					<text class="value-color">18888888888</text>
-					<icon class="iconfont icon-tell color-FF8B46"></icon>
+			</view>
+			<view class="contact-bar">
+				<view class="item-title">
+					<icon class="iconfont icon-zhengzhouyinhangAPPtubiaodiergaolunkuohuachunse-28 color-548AFF" style="font-size: 48rpx;"></icon>
+					<text class="f14">帮帮忙热线</text>
 				</view>
-				<view class="store-problem mt-5">
-					<icon class="iconfont icon-security color-FF8B46 mr-5"></icon>
-					<text class="f14 color-secondary">如果您购买的商品有任何问题，请直接与购买的门店联系！门店将为您处理，让您售后无忧！</text>
+				<view class="item-desc">
+					<view class="f14 color-secondary">如果您找不到购物的提货的门店，</view>
+					<view class="f14 color-secondary">
+						请致电 <text class="value-color">4008208820</text>
+						<icon class="iconfont icon-tell color-FF8B46"></icon>
+					</view>
 				</view>
+			</view>
+			<view class="btn-bar">
+				<button class="btn color-white bg-red" bindtap="goShopping">去购物</button>
 			</view>
 		</view>
-		<view class="contact-bar">
-			<view class="item-title">
-				<icon class="iconfont icon-zhengzhouyinhangAPPtubiaodiergaolunkuohuachunse-28 color-548AFF" style="font-size: 36rpx;"></icon>
-				<text class="f14">帮帮忙热线</text>
-			</view>
-			<view class="item-desc">
-				<view class="f14 color-secondary">如果您找不到购物的提货的门店，</view>
-				<view class="f14 color-secondary">
-					请致电 <text class="value-color">4008208820</text>
-					<icon class="iconfont icon-tell color-FF8B46"></icon>
-				</view>
-			</view>
-		</view>
-		<view class="btn-bar">
-			<button class="btn color-white bg-red" bindtap="goShopping">去购物</button>
-		</view>
-	</view>
+	</scroll-view>
 
 	<!--提货弹框-->
 	<view class="mask" wx:if="{{displayPickupDialog}}">
@@ -87,4 +92,5 @@
 			</view>
 		</view>
 	</view>
+
 </view>

@@ -10,8 +10,8 @@
 		"preloadBackgroundData": false,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false,
 		"coverView": true,
+		"autoAudits": false,
 		"showShadowRootInWxmlPanel": true,
 		"scopeDataCheck": false,
 		"checkInvalidKey": true,
@@ -61,8 +61,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/home/main",
-					"pathName": "pages/home/main",
+					"name": "pages/cart/main",
+					"pathName": "pages/cart/main",
 					"query": "",
 					"scene": null
 				}

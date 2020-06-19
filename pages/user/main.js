@@ -10,6 +10,11 @@ Page({
     navHeight: app.globalData.navHeight,
     titleBarHeight: 0,
     displayPickupDialog: false,
+    navBarHeight: '64px',
+    contentHeight: 0,
+    windowWidth: 0,
+    windowHeight: 0,
+    windowRemainHeight: 0,
     orderMenus: [
       {id: 1001, type: 0, 'icon': '/static/images/usercenter/icon-order-list.png', name: '全部订单'},
       {id: 1002, type: 1, 'icon': '/static/images/usercenter/icon-wallet.png', name: '代付款'},
@@ -22,7 +27,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      windowHeight: wx.getSystemInfoSync().windowHeight,
+      windowWidth: wx.getSystemInfoSync().windowWidth
+    })
   },
 
   /**
@@ -38,9 +46,12 @@ Page({
     var query = wx.createSelectorQuery();
     //选择id
     var that = this;
-    query.select('.title-bar').boundingClientRect(function (rect) {
+    var navBarHeight = 0;
+    query.select('.titlebar').boundingClientRect(function (rect) {
+      navBarHeight = rect.height;
       that.setData({
-        titleBarHeight: rect.height + 'px'
+        navBarHeight: navBarHeight + 'px',
+        contentHeight: (that.data.windowHeight - navBarHeight) + 'px'
       })
     }).exec();
   },
@@ -80,7 +91,9 @@ Page({
 
   },
   handleSettings: function() {
-    console.log('setting button tap event.')
+    wx.navigateTo({
+      url: '/pages/user/settings/main',
+    })
   },
   goShopping: function() {
     wx.switchTab({

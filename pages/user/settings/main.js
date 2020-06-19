@@ -1,40 +1,27 @@
-// pages/order/manage/main.js
-var utils=require('../../../utils/util.js')
+// pages/user/settings/main.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    currentTab: 0,
     navBarHeight: '64px',
     contentHeight: 0,
-    tabbarHeight: 0,
     windowWidth: 0,
     windowHeight: 0,
     windowRemainHeight: 0,
-    tabbarItems: [
-      {'id': 1001, 'name': '全部', 'type': 0},
-      {'id': 1002, 'name': '代付款', 'type': 1},
-      {'id': 1003, 'name': '待提货', 'type': 2},
-      {'id': 1004, 'name': '已提货', 'type': 3},
-    ],
-    orderList: []
+    version: '0.0.0'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (utils.isNumber(options.index) || utils.isString(options.index)) {
-      this.setData({
-        currentTab: parseInt(options.index)
-      })
-    }
-
+    const res = wx.getSystemInfoSync();
     this.setData({
       windowHeight: wx.getSystemInfoSync().windowHeight,
-      windowWidth: wx.getSystemInfoSync().windowWidth
+      windowWidth: wx.getSystemInfoSync().windowWidth,
+      version: 'v' + res.SDKVersion
     })
   },
 
@@ -53,20 +40,11 @@ Page({
     //选择id
     var that = this;
     var navBarHeight = 0;
-    var tabBarHeight = 0;
     query.select('.titlebar').boundingClientRect(function (rect) {
       navBarHeight = rect.height;
       that.setData({
         navBarHeight: navBarHeight + 'px',
         contentHeight: (that.data.windowHeight - navBarHeight) + 'px'
-      })
-    }).exec();
-      
-    query.select('.tabbar-box').boundingClientRect(function (rect) {
-      tabBarHeight = rect.height;
-      that.setData({
-        tabbarHeight: rect.height + 'px',
-        windowRemainHeight: (that.data.windowHeight - (navBarHeight + tabBarHeight)) + 'px'
       })
     }).exec();
   },
@@ -104,21 +82,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  setTab: function(index) {
-    this.setData({
-      currentTab: index
-    })  
-  },
-  swichNav: function(e) {
-    this.setTab(e.currentTarget.dataset.index)    
-  },
-  bindNavChange: function(e) {
-    this.setTab(e.detail.current)    
-  },
-  gotoOrderSearch: function(e) {
-    wx.navigateTo({
-      url: '/pages/order/search/main',
-    })
   }
 })

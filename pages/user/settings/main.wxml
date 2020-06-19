@@ -1,0 +1,34 @@
+<!--pages/user/settings/main.wxml-->
+<view class="container primary-bg">
+	<view class="navbar" style='height:{{navBarHeight}}'>
+		<view class="fixed width100 titlebar">
+			<navbar title-text="设置" back-icon="/static/images/back@3x.png" background="white" color="black" fontSize="18" navTitleStyle="color: white;" />
+		</view>
+	</view>
+
+	<scroll-view class="content page-spacing" style="height: {{contentHeight}}">
+		<view class="items">
+			<view class="item">
+				<view class="title">平台资质</view>
+				<view class="navigator"></view>
+			</view>
+			<view class="item">
+				<view class="title">用户服务协议</view>
+				<view class="navigator"></view>
+			</view>
+			<view class="item">
+				<view class="title">隐私政策</view>
+				<view class="navigator"></view>
+			</view>
+			<view class="item">
+				<view class="title">微信权限设置</view>
+				<view class="navigator"></view>
+			</view>
+		</view>
+
+		<view class="footer">
+			<button class="btn btn-exit">退出当前账号</button>
+			<view class="version text-center">{{version}}</view>
+		</view>
+	</scroll-view>
+</view>

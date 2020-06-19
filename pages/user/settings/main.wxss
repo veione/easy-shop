@@ -1,0 +1,71 @@
+/* pages/user/settings/main.wxss */
+@import '/css/global.wxss';
+@import '/assets/iconfont.wxss';
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #EEF2F5;
+}
+
+.navbar {
+  width: 100%;
+  z-index: 9999;
+}
+
+.navbar::after {
+  content: '';
+  display: block;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.items {
+  position: relative;
+  width: 100%;
+}
+
+.items .item {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 42rpx;
+  margin: 24rpx 12rpx;
+  border-radius: 12rpx;
+  background-color: white;
+}
+
+.items .item .navigator::after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-right: 1px solid #4F4F4F;
+  border-bottom: 1px solid #4F4F4F;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.footer {
+  position: absolute;
+  width: 100%;
+  bottom: 48rpx;
+}
+
+.footer .btn-exit {
+  width: 96%;
+  margin: 0 auto;
+  border-radius: 36rpx;
+  color: #B0B2B3;
+  background-color: #F8FAFB;
+}
+.footer .version {
+  margin-top: 24rpx;
+  color: #A0A1A1;
+}

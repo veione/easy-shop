@@ -4,6 +4,7 @@
     "pages/category/main",
     "pages/cart/main",
     "pages/user/main",
+    "pages/user/settings/main",
     "pages/search/main",
     "pages/details/main",
     "pages/order/confirm/main",
@@ -11,6 +12,7 @@
     "pages/order/search/main"
   ],
   "window": {
+    "navigationBarTextStyle":"black",
     "navigationStyle": "custom"
   },
   "style": "v2",

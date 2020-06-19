@@ -4,5 +4,6 @@
     "searchbar": "../../components/searchbar/searchbar",
     "category-scrollbar": "../../components/category-scrollbar/category-scrollbar",
     "product-item": "../../components/product-item/product-item"
-  }
+  },
+  "navigationBarTextStyle": "white"
 }
