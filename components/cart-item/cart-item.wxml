@@ -1,0 +1,40 @@
+<!--components/cart-item/cart-item.wxml-->
+<block wx:for="{{items}}" wx:key="index">
+	<view class="component">
+		<view class="header">
+			<view class="title">
+				<icon class="iconfont icon-warn mr-5" color="#FF771D"></icon>
+				<text class="text">该商品将于21日10:00开售</text>
+			</view>
+			<view class="countdown">
+				距开售还剩 <text class="time hour">24</text> : <text class="time minutes">02</text> : <text class="time seconds">36</text>
+			</view>
+		</view>
+		<view class="section">
+			<view class="item {{item.isTouchMove ? 'active' : ''}}" data-index="{{index}}" bindtouchstart="onItemTouchStart" bindtouchmove="onItemTouchMove">
+				<view class="content">
+          <view class="item-check" bindtap="onItemChecked" data-itemId="{{item.itemId}}" data-index="{{index}}">
+            <icon class="iconfont checkbox {{item.checked ? 'active icon-checked' : 'inactive icon-unchecked'}}"></icon>
+					</view>
+					<view class="item-cover">
+						<image class="icon" src="{{item.cover}}"></image>
+					</view>
+					<view class="item-info">
+						<text class="title">{{item.title}}</text>
+						<text class="color-secondary f14">{{item.desc}}</text>
+						<view class="bottom">
+							<text class="price color-red f20">￥{{item.price}}</text>
+							<view class="btn-group">
+								<text class="btn-minus" data-itemId="{{item.itemId}}" data-index="{{index}}" bindtap="onMinusCount">-</text>
+								<text class="num text-center">{{item.num}}</text>
+								<text class="btn-plus" data-itemId="{{item.itemId}}" data-index="{{index}}" bindtap="onAddCount">+</text>
+							</view>
+						</view>
+					</view>
+        </view>
+				<view class="btn-del" bindtap="onItemDel" data-index="{{index}}" data-itemId="{{item.itemId}}">删除</view>
+			</view>
+		</view>
+		<view class="mask"></view>
+	</view>
+</block>

@@ -1,0 +1,11 @@
+/* pages/demo/cartItem/main.wxss */
+.container {
+  width: 100%;
+  margin: 64px auto 0 auto;
+  background-color: #E9EDF1;
+}
+
+.page-section {
+  width: 96%;
+  margin: 24rpx auto;
+}

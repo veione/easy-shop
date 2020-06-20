@@ -13,60 +13,69 @@ Page({
     windowHeight: 0,
     windowRemainHeight: 0,
     totalMoney: 0,
+    selectAll: false,
+    editStatus: false,
+    cartItems2: [],
     cartItems: [
       {
-        "itemId": "1043782728",
-        "num": 2,
+        "itemId": "1043782721",
+        "num": 1,
         "title": "民田妃子笑荔枝500g/盒正负50g",
         "desc": "500g正负50g",
         "cover": "/static/images/product/20200609154125.jpg",
         "price": 6.99,
-        "checked": true
+        "checked": false,
+        "isTouchMove": false
       },
       {
-        "itemId": "1043782728",
-        "num": 2,
+        "itemId": "1043782722",
+        "num": 1,
         "title": "民田妃子笑荔枝500g/盒正负50g",
         "desc": "500g正负50g",
         "cover": "/static/images/product/20200609154125.jpg",
         "price": 6.99,
-        "checked": true
+        "checked": false,
+        "isTouchMove": false
       },
       {
-        "itemId": "1043782728",
-        "num": 2,
+        "itemId": "1043782723",
+        "num": 1,
         "title": "民田妃子笑荔枝500g/盒正负50g",
         "desc": "500g正负50g",
         "cover": "/static/images/product/20200609154125.jpg",
         "price": 6.99,
-        "checked": true
+        "checked": false,
+        "isTouchMove": false
       },
       {
-        "itemId": "1043782728",
-        "num": 2,
+        "itemId": "1043782724",
+        "num": 1,
         "title": "民田妃子笑荔枝500g/盒正负50g",
         "desc": "500g正负50g",
         "cover": "/static/images/product/20200609154125.jpg",
         "price": 6.99,
-        "checked": true
+        "checked": false,
+        "isTouchMove": false
       },
       {
-        "itemId": "1043782728",
-        "num": 2,
+        "itemId": "1043782725",
+        "num": 1,
         "title": "民田妃子笑荔枝500g/盒正负50g",
         "desc": "500g正负50g",
         "cover": "/static/images/product/20200609154125.jpg",
         "price": 6.99,
-        "checked": true
+        "checked": false,
+        "isTouchMove": false
       },
       {
-        "itemId": "1043782728",
-        "num": 2,
+        "itemId": "1043782726",
+        "num": 1,
         "title": "民田妃子笑荔枝500g/盒正负50g",
         "desc": "500g正负50g",
         "cover": "/static/images/product/20200609154125.jpg",
         "price": 6.99,
-        "checked": true
+        "checked": false,
+        "isTouchMove": false
       }
     ] //购物车物品
   },
@@ -95,25 +104,19 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var cartItemCount = this.data.cartItems.length;
-    if (cartItemCount > 0) {
-      wx.setTabBarBadge({//tabbar右上角添加文本
-        index: 2, ////tabbar下标
-        text: '' + cartItemCount //显示的内容
-      });
-    }
+    this.calcCartNum();
 
-      var query = wx.createSelectorQuery();
-      //选择id
-      var that = this;
-      var navBarHeight = 0;
-      query.select('.topbar').boundingClientRect(function (rect) {
-        navBarHeight = rect.height;
-        that.setData({
-          navBarHeight: navBarHeight + 'px',
-          contentHeight: (that.data.windowHeight - navBarHeight) + 'px'
-        })
-      }).exec();
+    var query = wx.createSelectorQuery();
+    //选择id
+    var that = this;
+    var navBarHeight = 0;
+    query.select('.topbar').boundingClientRect(function (rect) {
+      navBarHeight = rect.height;
+      that.setData({
+        navBarHeight: navBarHeight + 'px',
+        contentHeight: (that.data.windowHeight - navBarHeight) + 'px'
+      })
+    }).exec();
   },
 
   /**
@@ -170,5 +173,130 @@ Page({
   },
   onAddCount: function(e) {
     console.log("onAddCount", e)
+  },
+  onSelectAll: function(e) {
+    this.data.cartItems.forEach(item=>{
+      item.checked = !this.data.selectAll;
+    })
+    this.setData({
+      selectAll: !this.data.selectAll,
+      cartItems: this.data.cartItems
+    });
+    this.calcTotalMoney();
+  },
+  calcCartNum: function() {
+    var cartItemCount = this.data.cartItems.length;
+    if (cartItemCount > 0) {
+      wx.setTabBarBadge({//tabbar右上角添加文本
+        index: 2, //tabbar下标
+        text: '' + cartItemCount //显示的内容
+      });
+    } else {
+      wx.removeTabBarBadge({
+        index: 2,
+      })
+    }
+  },
+  calcTotalMoney: function() {
+    var totalMoney = 0;
+    this.data.cartItems.forEach(item=>{
+      if (item.checked) {
+        totalMoney = util.add(totalMoney, util.mul(item.price, item.num));
+      }
+    });
+    this.setData({
+      totalMoney: totalMoney
+    })
+  },
+  onIncrement: function(e) {
+    var that = this,
+    index = e.detail.itemId;//当前索引
+    that.data.cartItems.forEach(function (v, i) {
+      if (v.itemId == index) {
+          v.num++;
+      }
+    })
+
+    this.setData({
+      cartItems: this.data.cartItems
+    })
+    this.calcCartNum();
+    this.calcTotalMoney();
+  },
+  onDecrease: function(e) {
+    var that = this,
+    flag = false,
+    index = e.detail.itemId;//当前索引
+    that.data.cartItems.forEach(function (v, i) {
+      if (v.itemId == index) {
+          var num = v.num - 1;
+          if (num < 1) {
+            wx.showModal({
+              title: '确认删除',
+              content: '您确定要删除商品吗？',
+              success: function(e) {
+                if (e.confirm) {
+                  that.data.cartItems.splice(i, 1)
+                  that.setData({
+                    cartItems: that.data.cartItems
+                  })
+                  flag = true;
+                  that.calcCartNum();
+                  that.calcTotalMoney();
+                }
+              }
+            })
+          } else {
+            v.num--;
+            flag = true;
+          }
+      }
+    })
+
+    if (flag) {
+      this.setData({
+        cartItems: this.data.cartItems
+      })
+      this.calcCartNum();
+    }
+  },
+
+  onChecked: function(e) {
+    var that = this,
+    index = e.detail.itemId;//当前索引
+    that.data.cartItems.forEach(function (v, i) {
+      if (v.itemId == index) {
+          v.checked = !v.checked;
+      }
+    })
+
+    this.setData({
+      cartItems: this.data.cartItems
+    })
+    that.calcCartNum();
+    this.calcTotalMoney();
+  },
+  onItemDelete: function(e) {
+    var that = this,
+    index = e.detail.itemId;//当前索引
+    that.data.cartItems.forEach(function (v, i) {
+      if (v.itemId == index) {
+        that.data.cartItems.splice(i, 1)
+        that.setData({
+          cartItems: that.data.cartItems
+        })
+        wx.showToast({
+          title: '商品已删除！',
+          icon: 'success'
+        })
+        that.calcCartNum();
+        that.calcTotalMoney();
+      }
+    })
+  },
+  onEdit: function(e) {
+    this.setData({
+      editStatus: !this.data.editStatus
+    })
   }
 })

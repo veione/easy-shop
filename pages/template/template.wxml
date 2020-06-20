@@ -32,3 +32,18 @@
 		</view>
 	</view>
 </template>
+
+
+<template name="emptyCart">
+	<view class="empty-cart-wrapper">
+		<view class="icon">
+			<image class="img" src="/static/images/empty-cart.png" mode="aspectFit" style="{{iconStyle}}"></image>
+		</view>
+		<view class="tips">
+			<text class="tips-text">{{showText}}</text>
+		</view>
+		<view class="btn-group">
+			<navigator wx:if="{{showShoppingBtn}}" class="btn btn-shopping" url="/pages/home/main" open-type="switchTab">去逛逛</navigator>
+		</view>
+	</view>
+</template>

@@ -1,5 +1,5 @@
 /* pages/user/main.wxss */
-@import '../../css/global.wxss';
+@import '/css/global.wxss';
 @import '/css/background.wxss';
 @import '/css/color.wxss';
 @import '/css/font.wxss';

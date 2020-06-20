@@ -66,3 +66,36 @@
   text-align: center;
   font-size: 28rpx;
 }
+
+
+.empty-cart-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-cart-wrapper .tips {
+  margin: 24rpx;
+}
+
+.empty-cart-wrapper .tips-text {
+  font-size: 32rpx;
+  color: #808080;
+}
+
+.empty-cart-wrapper .btn-group {
+  padding-top: 24rpx;
+}
+
+.empty-cart-wrapper .btn-shopping {
+  width: auto;
+  border-radius: 36rpx;
+  padding: 12rpx 96rpx;
+  color: red;
+  border: 1px solid red;
+  background-color: transparent;
+}

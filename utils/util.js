@@ -123,6 +123,17 @@ const div=(a, b) =>{
   return c = Number(a.toString().replace(".", "")), d = Number(b.toString().replace(".", "")), mul(c / d, Math.pow(10, f - e));
 }
 
+  /**
+  * 计算滑动角度
+  * @param {Object} start 起点坐标
+  * @param {Object} end 终点坐标
+  */
+ const angle=(start, end) =>{
+  var _X = end.X - start.X,
+  _Y = end.Y - start.Y
+  //返回角度 /Math.atan()返回数字的反正切值
+  return 360 * Math.atan(_Y / _X) / (2 * Math.PI);
+}
 
 module.exports = {
   formatTime: formatTime,
@@ -136,5 +147,6 @@ module.exports = {
   div: div,
   mul: mul,
   add: add,
-  sub: sub
+  sub: sub,
+  angle: angle
 }

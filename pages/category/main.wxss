@@ -4,6 +4,12 @@
 @import "/css/background.wxss";
 @import "/css/color.wxss";
 
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
 .menus {
   position: relative;
   width: 100%;

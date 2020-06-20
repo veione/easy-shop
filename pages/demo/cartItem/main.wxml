@@ -1,0 +1,6 @@
+<!--pages/demo/cartItem/main.wxml-->
+<view class="container">
+	<view class="page-section">
+		<cart-item items="{{items}}"></cart-item>
+	</view>
+</view>

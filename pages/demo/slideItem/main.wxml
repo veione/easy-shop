@@ -1,0 +1,7 @@
+<!--pages/demo/slideItem/main.wxml-->
+<view class="container">
+	<view class="item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{items}}" wx:key="index">
+		<view class="content">{{item.content}}</view>
+		<view class="btn-del" catchtap="del" data-index="{{index}}">删除</view>
+	</view>
+</view>

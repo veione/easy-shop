@@ -9,7 +9,9 @@
     "pages/details/main",
     "pages/order/confirm/main",
     "pages/order/manage/main",
-    "pages/order/search/main"
+    "pages/order/search/main",
+    "pages/demo/slideItem/main",
+    "pages/demo/cartItem/main"
   ],
   "window": {
     "navigationBarTextStyle":"black",
