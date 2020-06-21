@@ -6,6 +6,12 @@ Page({
    */
   data: {
     curIndex: 0,
+    cartNum: 6,
+    navBarHeight: '64px',
+    contentHeight: 0,
+    windowWidth: 0,
+    windowHeight: 0,
+    windowRemainHeight: 0,
     detail: [
       {"id": "1001", "title": "水果馆", "banner": "../../static/images/category/fruit.png", 
       productList: [
@@ -49,7 +55,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      windowHeight: wx.getSystemInfoSync().windowHeight,
+      windowWidth: wx.getSystemInfoSync().windowWidth,
+    })
   },
 
   /**
@@ -63,7 +72,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var query = wx.createSelectorQuery();
+    //选择id
+    var that = this;
+    var navBarHeight = 0;
+    query.select('.titlebar').boundingClientRect(function (rect) {
+      navBarHeight = rect.height;
+      that.setData({
+        navBarHeight: navBarHeight + 'px',
+        contentHeight: (that.data.windowHeight - navBarHeight) + 'px'
+      })
+    }).exec();
   },
 
   /**
@@ -105,6 +124,16 @@ Page({
     this.setData({
       curIndex: index,
       toView: index
+    })
+  },
+  toSearch: function(e) {
+    wx.navigateTo({
+      url: '/pages/search/main',
+    })
+  },
+  toCart: function(e) {
+    wx.switchTab({
+      url: '/pages/cart/main',
     })
   }
 })

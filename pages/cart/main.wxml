@@ -45,9 +45,9 @@
 				<text class="text-center">去结算</text>
 				<text class="count">({{cartItems.length}})</text>
 			</view>
-			<view wx:else class="btn-del">
+			<view wx:else class="btn-del" bindtap="onDeleteSelectItem">
 				<text class="text-center">删除</text>
-				<text class="count">({{cartItems.length}})</text>
+				<text class="count">({{checkedNum}})</text>
 			</view>
 		</view>
 	</view>

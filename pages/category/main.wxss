@@ -3,8 +3,10 @@
 @import "/css/font.wxss";
 @import "/css/background.wxss";
 @import "/css/color.wxss";
+@import "/css/global.wxss";
+@import "/assets/iconfont.wxss";
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 0;
   height: 0;
   color: transparent;
@@ -14,6 +16,7 @@
   position: relative;
   width: 100%;
   display: flex;
+  margin-top: 20rpx;
   background-color: #F5F7FA;
 }
 
@@ -38,6 +41,67 @@
   width: 6rpx;
   height: 48rpx;
   background-color: red;
+}
+
+.searchbar {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.searchbar .content {
+  width: 90%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  height: 84rpx;
+  background-color: #E9EDF1;
+  border-radius: 45rpx;
+}
+
+.searchbar .search-icon {
+  display: inline-block;
+  padding: 0 6rpx 0 24rpx;
+}
+
+.searchbar .search-input {
+  width: 100%;
+  height: 84rpx;
+  line-height: 84rpx;
+  padding: 0 12rpx;
+}
+
+.searchbar .cart {
+  position: relative;
+  width: 10%;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchbar .cart .icon {
+  font-size: 48rpx;
+  z-index: 1000;
+}
+
+.searchbar .cart .badge {
+  position: absolute;
+  min-width: 28rpx;
+  height: 28rpx;
+  top: -8rpx;
+  right: 0;
+  color: red;
+  border: 1px solid red;
+  border-radius: 50%;
+  font-size: 24rpx;
+  line-height: 28rpx;
+  text-align: center;
+  padding: 2rpx;
+  z-index: 999;
 }
 
 .menu-left {

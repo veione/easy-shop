@@ -1,11 +1,11 @@
 <!-- 组件模板 -->
 <view class="store-card">
     <view class="logo">
-        <image class="logo" src="http://pic1.58cdn.com.cn/p1/big/n_v23c21ddcf9e4841a2b349b3b19b7f0444.jpg" alt="logo" style="width:64px;height:64px"></image>
+        <image class="logo" src="http://pic1.58cdn.com.cn/p1/big/n_v23c21ddcf9e4841a2b349b3b19b7f0444.jpg" alt="logo"></image>
     </view>
     <view class="content">
-        <view class="card-title multi-ellipsis--l2">兴盛优选</view>
-        <view class="card-desc ellipsis">一家有温度的社区电商</view>
+        <view class="card-title multi-ellipsis--l2">长沙梅溪湖菜鸟驿站</view>
+        <view class="card-desc ellipsis">能为你们服务我很开心</view>
     </view>
     <view class="metrics">
         <view class="data">

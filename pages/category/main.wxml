@@ -1,26 +1,38 @@
 <!--pages/category/main.wxml-->
 <view class="container">
-	<view class="title-bar fixed  bg-white">
-		<navbar title-text="分类" home-icon="../../static/images/settings.png" background="white" color="black" fontSize="18" />
-		<view class="page-spacing">
-			<searchbar placeholder="搜索商品"></searchbar>
+	<view class="navbar" style="height: {{navBarHeight}};">
+		<view class="titlebar width100 fixed  bg-white">
+			<navbar title-text="分类" background="white" color="black" fontSize="18" />
+			<view class="searchbar page-spacing">
+				<view class="content">
+					<icon class="search-icon" type="search"></icon>
+					<input class="search-input" disabled="true" placeholder="搜索商品" bindtap="toSearch"></input>
+				</view>
+				<view class="cart" bindtap="toCart">
+					<view class="icon">
+						<icon class="iconfont icon-cart icon"></icon>
+					</view>
+					<view class="badge" wx:if="{{cartNum > 0}}">{{cartNum}}</view>
+				</view>
+			</view>
 		</view>
 	</view>
 
+
 	<view class="menus">
 		<view class="menu-left">
-			<scroll-view class="" scroll-y scroll-with-animation="{{true}}" style="height: 100vh;">
-				<view class="cate-item {{curIndex==index?'active':''}} text-center" wx:for="{{categoryList}}" wx:key="{{item.id}}" data-id="{{item.id}}" data-index="{{index}}" bindtap="switchCategory">
+			<scroll-view class="" scroll-y scroll-with-animation="{{true}}" style="height: {{contentHeight}};">
+				<view class="cate-item {{curIndex==index?'active':''}} text-center" wx:for="{{categoryList}}" wx:key="index" data-id="{{item.id}}" data-index="{{index}}" bindtap="switchCategory">
 					<text>{{item.title}}</text>
 				</view>
 			</scroll-view>
 		</view>
 		<view class="menu-right bg-white">
-			<swiper vertical="true" class="" current="{{toView}}" style="height: 100vh;">
-				<swiper-item wx:for="{{detail}}" wx:key="{{item.id}}">
-					<scroll-view class="cate-box" id="{{item.id}}" scroll-y style="height: 100vh;">
+			<swiper vertical="true" class="" current="{{toView}}" style="height: {{contentHeight}};">
+				<swiper-item wx:for="{{detail}}" wx:key="index">
+					<scroll-view class="cate-box" id="{{item.id}}" scroll-y  style="height: {{contentHeight}};">
 						<view class="cate-product">
-							<view class="product-list" bindtap="productDetails" wx:for="{{item.productList}}" wx:key="{{index}}" wx:for-item="product">
+							<view class="product-list" bindtap="productDetails" wx:for="{{item.productList}}" wx:key="index" wx:for-item="product">
 								<category-item></category-item>
 							</view>
 						</view>

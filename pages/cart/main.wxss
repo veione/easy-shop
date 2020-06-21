@@ -31,14 +31,15 @@
 }
 
 .titlebar .title {
-  display: inline-block;
   white-space: nowrap;
   width: 50%;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 32rpx;
 }
 
 .titlebar .btn-edit {
+  font-size: 32rpx;
   position: absolute;
   top: 50%;
   right: 2%;

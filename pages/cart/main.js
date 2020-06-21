@@ -15,6 +15,7 @@ Page({
     totalMoney: 0,
     selectAll: false,
     editStatus: false,
+    checkedNum: 0,
     cartItems2: [],
     cartItems: [
       {
@@ -183,6 +184,18 @@ Page({
       cartItems: this.data.cartItems
     });
     this.calcTotalMoney();
+    this.calcCheckedNum();
+  },
+  calcCheckedNum: function() {
+    var checkedNum = 0;
+    this.data.cartItems.forEach(item=>{
+      if (item.checked) {
+        checkedNum++;
+      }
+    });
+    this.setData({
+      checkedNum: checkedNum
+    })
   },
   calcCartNum: function() {
     var cartItemCount = this.data.cartItems.length;
@@ -222,6 +235,7 @@ Page({
     })
     this.calcCartNum();
     this.calcTotalMoney();
+    this.calcCheckedNum();
   },
   onDecrease: function(e) {
     var that = this,
@@ -243,6 +257,7 @@ Page({
                   flag = true;
                   that.calcCartNum();
                   that.calcTotalMoney();
+                  this.calcCheckedNum();
                 }
               }
             })
@@ -258,6 +273,7 @@ Page({
         cartItems: this.data.cartItems
       })
       this.calcCartNum();
+      this.calcCheckedNum();
     }
   },
 
@@ -275,6 +291,7 @@ Page({
     })
     that.calcCartNum();
     this.calcTotalMoney();
+    this.calcCheckedNum();
   },
   onItemDelete: function(e) {
     var that = this,
@@ -291,6 +308,7 @@ Page({
         })
         that.calcCartNum();
         that.calcTotalMoney();
+        this.calcCheckedNum();
       }
     })
   },
@@ -298,5 +316,29 @@ Page({
     this.setData({
       editStatus: !this.data.editStatus
     })
+  },
+  onDeleteSelectItem: function() {
+    var that = this,
+    checkedArr = [];
+
+    this.data.cartItems.forEach(function (item, i) {
+      if (item.checked) {
+        checkedArr.push(item.itemId);
+      }
+    });
+
+    checkedArr.forEach(itemId=>{
+      that.data.cartItems.forEach(function (item, index) {
+        if (item.itemId == itemId) {
+          that.data.cartItems.splice(index, 1);
+        }
+      })
+    });
+
+    this.setData({
+      cartItems: that.data.cartItems
+    })
+    this.calcCheckedNum();
+    this.calcCartNum();
   }
 })
