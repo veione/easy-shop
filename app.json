@@ -11,7 +11,8 @@
     "pages/order/manage/main",
     "pages/order/search/main",
     "pages/demo/slideItem/main",
-    "pages/demo/cartItem/main"
+    "pages/demo/cartItem/main",
+    "pages/checkout/main"
   ],
   "window": {
     "navigationBarTextStyle":"black",

@@ -5,6 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
+    navBarHeight: '64px',
+    contentHeight: 0,
+    tabbarHeight: 0,
+    windowWidth: 0,
+    windowHeight: 0,
+    windowRemainHeight: 0,
     currentIndex: 0,
     "firstList": [{ name: 'w券1', money: '5.00' }, { name: 'w券2', money: '50.00'}],
     "secondList": [{ name: 'y券1', money: '10.00' }, { name: 'y券2', money: '20.00' }],
@@ -45,7 +51,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      windowHeight: wx.getSystemInfoSync().windowHeight,
+      windowWidth: wx.getSystemInfoSync().windowWidth
+    })
   },
 
   /**
@@ -59,7 +68,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var query = wx.createSelectorQuery();
+    //选择id
+    var that = this;
+    var navBarHeight = 0;
+    query.select('.topbar').boundingClientRect(function (rect) {
+      navBarHeight = rect.height;
+      that.setData({
+        navBarHeight: navBarHeight + 'px',
+        contentHeight: (that.data.windowHeight - navBarHeight) + 'px'
+      })
+    }).exec();
   },
 
   /**
@@ -108,10 +127,39 @@ Page({
   },
   //用户点击tab时调用
   titleClick: function (e) {
-    let currentPageIndex =
+    let currentPageIndex =e.currentTarget.dataset.idx;
     this.setData({
       //拿到当前索引并动态改变
-      currentIndex: e.currentTarget.dataset.idx
+      currentIndex: currentPageIndex
+    })
+  },
+  toHome: function() {
+    wx.switchTab({
+      url: '/pages/home/main',
+    })
+  },
+  toCart: function() {
+    wx.switchTab({
+      url: '/pages/cart/main',
+    })
+  },
+  onShare: function(e) {
+    console.log('share product');
+  },
+  onAddToCart: function(e) {
+    wx.showToast({
+      title: '加入购物车成功！',
+      icon: 'none'
+    })
+  },
+  onBuy: function(e) {
+    wx.navigateTo({
+      url: '/pages/checkout/main',
+    })
+  },
+  toDetailsTab: function() {
+    this.setData({
+      currentIndex: 0
     })
   }
 })

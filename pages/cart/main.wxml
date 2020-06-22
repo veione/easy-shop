@@ -41,7 +41,7 @@
 				<text class="color-red text-bold f16">￥{{totalMoney}}</text>
 			</view>
 
-			<view wx:if="{{editStatus==false}}"class="btn-checkout {{totalMoney > 0 ? 'bg-red' : 'checkout-bg-gray'}}">
+			<view wx:if="{{editStatus==false}}" class="btn-checkout {{totalMoney > 0 ? 'bg-red' : 'checkout-bg-gray'}}" bindtap="toCheckout">
 				<text class="text-center">去结算</text>
 				<text class="count">({{cartItems.length}})</text>
 			</view>

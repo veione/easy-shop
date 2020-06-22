@@ -10,11 +10,12 @@
   justify-content: flex-start;
 }
 
-.category-item {
+.item {
   position: relative;
   width: 120rpx; 
   height: 120rpx;
-  margin: 16rpx 10rpx 16rpx 10rpx;
+  padding-left: 6rpx;
+  margin: 16rpx 8rpx 16rpx 12rpx;
   display: inline-flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -22,12 +23,12 @@
   text-align: center;
 }
 
-.category-item .icon image {
+.item .icon .img {
   max-width: 96rpx;
   max-height: 96rpx;
 }
 
-.category-item .title {
+.item .title {
   font-size: 24rpx;
 }
 

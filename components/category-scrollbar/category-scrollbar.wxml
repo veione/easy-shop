@@ -3,21 +3,18 @@
 	<view class="page-section page-section-spacing">
 		<swiper class="swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#D8D8D8" indicator-active-color="#FD6226">
 			<block wx:for="{{dataList}}" wx:key="*this" wx:for-item="items">
-				<swiper-item>
-					<view class="swiper-item {{item}}">
-						<view class="category-item" wx:for="{{items}}" wx:for-index="idx" wx:for-item="item" wx:key="idx">
-							<view class="item-content">
-								<view class="icon">
-									<image src="{{item.icon}}"></image>
-								</view>
-								<view class="text">
-									<text class="title">{{item.title}}</text>
-								</view>
+				<swiper-item class="swiper-item {{item}}">
+					<view class="item" wx:for="{{items}}" wx:for-index="idx" wx:for-item="item" wx:key="idx">
+						<view class="content">
+							<view class="icon">
+								<image class="img" src="{{item.icon}}"></image>
+							</view>
+							<view class="text">
+								<text class="title">{{item.title}}</text>
 							</view>
 						</view>
-						<view class="swiper-dot-box"></view>
 					</view>
-
+					<view class="swiper-dot-box"></view>
 				</swiper-item>
 			</block>
 		</swiper>

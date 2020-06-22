@@ -1,0 +1,120 @@
+<!--pages/checkout/main.wxml-->
+<view class="container primary-bg">
+	<view class="navbar" style='height:{{navBarHeight}}'>
+		<view class="fixed width100 titlebar">
+			<navbar title-text="确认订单" back-icon="/static/images/back@3x-light.png" background="red" color="white" fontSize="18" navTitleStyle="color: white;" />
+		</view>
+	</view>
+
+	<scroll-view scroll-y="true" class="content" style="height: {{contentHeight}};">
+		<view class=" page-spacing">
+			<view class="user-info">
+				<view class="text">收货人：</view>
+				<input class="input-field" type="text" value="GitHub"></input>
+				<input class="input-field" type="tel" value="18888888888"></input>
+			</view>
+
+			<view class="store-info">
+				<view class="name">自提点：长沙梅溪湖菜鸟驿站</view>
+				<view class="address">湖南省长沙市岳麓区长沙梅溪湖菜鸟驿站</view>
+				<view class="tel">门店电话：
+					<text class="number">18888888888</text>
+					<icon class="icon iconfont icon-tell"></icon>
+				</view>
+			</view>
+
+      <view class="items">
+      <view class="product-info">
+				<view class="cover">
+					<image class="icon" src="/static/images/product/20200609154125.jpg"></image>
+					<view class="mark">一心食品专供</view>
+				</view>
+				<view class="desc">
+					<view class="title">雅蒂斯 白砂糖 900g/包</view>
+					<view class="price">
+						<view class="date mb-10">06月23日 16:00提货</view>
+						<text class="current-price">￥6.99</text>
+						<text class="original-price">￥12</text>
+					</view>
+				</view>
+				<view class="num">x2</view>
+			</view>
+
+      <view class="product-info">
+				<view class="cover">
+					<image class="icon" src="/static/images/product/20200609154125.jpg"></image>
+					<view class="mark">一心食品专供</view>
+				</view>
+				<view class="desc">
+					<view class="title">雅蒂斯 白砂糖 900g/包</view>
+					<view class="price">
+						<view class="date mb-10">06月23日 16:00提货</view>
+						<text class="current-price">￥6.99</text>
+						<text class="original-price">￥12</text>
+					</view>
+				</view>
+				<view class="num">x2</view>
+			</view>
+
+      <view class="product-info">
+				<view class="cover">
+					<image class="icon" src="/static/images/product/20200609154125.jpg"></image>
+					<view class="mark">一心食品专供</view>
+				</view>
+				<view class="desc">
+					<view class="title">雅蒂斯 白砂糖 900g/包</view>
+					<view class="price">
+						<view class="date mb-10">06月23日 16:00提货</view>
+						<text class="current-price">￥6.99</text>
+						<text class="original-price">￥12</text>
+					</view>
+				</view>
+				<view class="num">x2</view>
+			</view>
+
+      <view class="product-info">
+				<view class="cover">
+					<image class="icon" src="/static/images/product/20200609154125.jpg"></image>
+					<view class="mark">一心食品专供</view>
+				</view>
+				<view class="desc">
+					<view class="title">雅蒂斯 白砂糖 900g/包</view>
+					<view class="price">
+						<view class="date mb-10">06月23日 16:00提货</view>
+						<text class="current-price">￥6.99</text>
+						<text class="original-price">￥12</text>
+					</view>
+				</view>
+				<view class="num">x2</view>
+			</view>
+      </view>
+			
+
+			<view class="count-info">
+				<view class="desc">共计2件商品</view>
+				<view class="count">
+					<text class="text">应付金额：</text>
+					<text class="currency">￥</text>
+					<text class="money">13.98</text>
+				</view>
+			</view>
+
+			<view class="problem-info">
+				<view class="text">1.如果您购买的商品由任何问题，请直接与购买的门店联系！门店将为您处理，让您售后无忧！</view>
+				<view class="text mt-10">2.如果您找不到购物的提货门店，请致电轻松优选帮帮忙热线！4008208820<icon class="icon iconfont icon-tell"></icon>
+				</view>
+			</view>
+		</view>
+	</scroll-view>
+
+	<view class="footer">
+		<view class="checkout">
+			<view class="count">
+				<text class="text">合计：</text>
+				<text class="currency">￥</text>
+				<text class="money">13.98</text>
+			</view>
+			<button class="btn btn-checkout">提交订单</button>
+		</view>
+	</view>
+</view>

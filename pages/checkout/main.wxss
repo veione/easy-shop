@@ -1,0 +1,240 @@
+/* pages/checkout/main.wxss */
+@import '/css/global.wxss';
+@import '/css/background.wxss';
+@import '/css/color.wxss';
+@import '/css/font.wxss';
+@import '/css/pdmg.wxss';
+@import '/assets/iconfont.wxss';
+@import '/pages/template/template.wxss';
+
+.container {
+  position: relative;
+  width: 100%;
+  background-color: #EEF2F5;
+}
+
+.navbar {
+  position: relative;
+  width: 100%;
+  z-index: 999;
+}
+
+.navbar::after {
+  content: '';
+  display: block;
+}
+
+.user-info,
+.store-info,
+.product-info,
+.count-info {
+  margin: 24rpx 12rpx;
+  padding: 24rpx;
+  background-color: white;
+  border-radius: 12rpx;
+}
+
+.user-info {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 12rpx solid transparent;
+  background: linear-gradient(white, white) padding-box, repeating-linear-gradient(-45deg, red 0, red 12.5%, transparent 0, transparent 25%, #58a 0, #58a 37.5%, transparent 0, transparent 50%) 0/5em 5em;
+}
+
+.user-info .text {
+  min-width: 128rpx;
+  color: #6B6B6B;
+}
+
+.user-info .input-field {
+  padding: 20rpx 12rpx;
+  margin: 0 12rpx;
+  border: 2rpx solid #E9EAEB;
+}
+
+.store-info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-flow: column nowrap;
+}
+
+.store-info .name {
+  font-size: 32rpx;
+  line-height: 32rpx;
+  color: #ED1C0D;
+}
+
+.store-info .address {
+  font-size: 28rpx;
+  line-height: 28rpx;
+  padding-top: 16rpx;
+  color: #999999;
+}
+
+.store-info .tel {
+  font-size: 28rpx;
+  line-height: 28rpx;
+}
+
+.store-info .tel>.number {
+  color: #FF8237;
+}
+
+.store-info .tel>.icon {
+  color: #FF8237;
+  padding-left: 8rpx;
+}
+
+.product-info {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-info .cover {
+  position: relative;
+  border-radius: 12rpx;
+}
+
+.product-info .cover>.icon {
+  width: 200rpx;
+  height: 200rpx;
+  flex-grow: 1;
+}
+
+.product-info .cover>.mark {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40rpx;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  text-align: center;
+  color: white;
+  background-color: #EB7A38;
+}
+
+.product-info .desc {
+  display: inline-flex;
+  flex-flow: column nowrap;
+  height: 200rpx;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-grow: 3;
+  padding-left: 24rpx;
+}
+
+.product-info .desc .title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.product-info .desc .date {
+  font-size: 24rpx;
+}
+
+.product-info .desc .current-price {
+  color: #E60012;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.product-info .desc .original-price {
+  padding-left: 24rpx;
+  color: #999999;
+  text-decoration: line-through;
+}
+
+.product-info .num {
+  flex-grow: 1;
+}
+
+.product-info .date {
+  color: #EC3644;
+}
+
+.count-info {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 0;
+}
+
+.count-info .desc {
+  color: #555555;
+}
+
+.count-info .currency,
+.count-info .money {
+  color: #E60012;
+}
+
+.count-info .money {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.problem-info .text {
+  font-size: 24rpx;
+  color: #9FA0A0;
+}
+
+.problem-info {
+  margin: 24rpx 12rpx;
+}
+
+.problem-info .text>.icon {
+  color: #FF8237;
+  padding-left: 8rpx;
+  padding-bottom: 120rpx;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 112rpx;
+  background-color: white;
+}
+
+.footer .checkout {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 0;
+}
+
+.footer .checkout .count {
+  padding-left: 28rpx;
+}
+
+.footer .checkout .currency,
+.footer .checkout .money {
+  color: #E60012;
+}
+
+.footer .checkout .money {
+  font-size: 48rpx;
+  font-weight: bold;
+}
+
+.footer .checkout .btn-checkout {
+  color: white;
+  margin: 0;
+  padding: 36rpx;
+  border-radius: 0;
+  background-color: #E91728;
+}

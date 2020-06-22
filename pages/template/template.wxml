@@ -47,3 +47,34 @@
 		</view>
 	</view>
 </template>
+
+<template name="shoppingGuide">
+	<view class="shopping-guide">
+		<view class="title-item">
+			<view class="line"></view>
+			<view class="title f18 color-black text-bold">购物指南</view>
+		</view>
+		<view class="steps" style="margin-bottom: 100px;">
+			<view class="item">
+				<view class="title">1.在线下单</view>
+				<view class="desc">每天可购买时间：00:00-23:00</view>
+			</view>
+			<view class="item">
+				<view class="title">2.物流配送</view>
+				<view class="desc">每天16:00之前，物流会将您昨日购买的商品，配送到您购买时选择的自提门店。</view>
+			</view>
+			<view class="item">
+				<view class="title">3.门店自提</view>
+				<view class="desc">每天16:00之后（门店不同，到货时间会有差异），您需要到购买时选择的自提门店提货。</view>
+			</view>
+			<view class="item">
+				<view class="title">4.售后无忧</view>
+				<view class="desc">如果您购买的商品有任何问题，请直接与购买的门店联系，门店将为您处理，让您售后无忧！</view>
+			</view>
+			<view class="item">
+				<view class="title">5.全国热线</view>
+				<view class="desc">如果您找不到购物的自提门店，请致电轻松优选全国服务热线！电话：4008889997</view>
+			</view>
+		</view>
+	</view>
+</template>

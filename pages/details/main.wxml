@@ -1,27 +1,30 @@
 <!--pages/details/main.wxml-->
+<import src="/pages/template/template.wxml" />
 <view class="container">
-	<view class='topbar'>
-		<navbar title-text="商品详情" back-icon="../../static/images/back@3x.png" background="#fff" bindback="back" navTitleStyle="left: 84px;" />
-		<view class='tabbar-container'>
-			<scroll-view scroll-y bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
-				<!--Tab布局-->
-				<view class='title'>
-					<view class="{{0 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='0'>
-						<text>基本信息</text>
-						<hr class="line-style" />
+	<view class='header' style="height: {{navBarHeight}}">
+		<view class="fixed width100 topbar">
+			<navbar title-text="商品详情" back-icon="/static/images/back@3x.png" background="#fff" bindback="back" />
+			<view class='tabbar-container'>
+				<scroll-view scroll-y bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+					<!--Tab布局-->
+					<view class='title'>
+						<view class="{{0 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='0'>
+							<text>基本信息</text>
+							<hr class="line-style" />
+						</view>
+						<view class="{{1 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='1'>
+							<text>购买记录</text>
+							<hr class="line-style" />
+						</view>
 					</view>
-					<view class="{{1 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='1'>
-						<text>购买记录</text>
-						<hr class="line-style" />
-					</view>
-				</view>
-			</scroll-view>
+				</scroll-view>
+			</view>
 		</view>
 	</view>
 
-	<view class="content">
-		<scroll-view scroll-y="true" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
-			<swiper class='swiper-component' bindchange='pagechange' current='{{currentIndex}}' style="height:100vh;">
+	<view class="content" style="height: {{contentHeight}}">
+		<scroll-view scroll-y="true" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" style="height: {{contentHeight}}">
+			<swiper class='swiper-component' bindchange='pagechange' current='{{currentIndex}}' style="height: {{contentHeight}}">
 				<swiper-item class='swiper-item'>
 					<!--banner start-->
 					<view class="banner">
@@ -81,23 +84,29 @@
 					<!--sale-data-item end-->
 
 					<!--product-detail start-->
-					<scroll-view class='body-v product-detail pt-20' scroll-y="true">
+					<view class='product-detail pt-20'>
 						<view class="title-item">
 							<view class="line"></view>
 							<view class="title f18 color-black text-bold">商品详情</view>
 						</view>
-						<view class="section-spacing supplier-item">
-							<view class="table">
-								<view class="tr">
-									<view class="td">供应商：杜康蛋品</view>
-									<view class="td">品牌：龙丹</view>
-								</view>
-								<view class="tr">
-									<view class="td">规格：20枚</view>
-									<view class="td">产地：江西</view>
-								</view>
+
+						<view class="section-spacing product-details items">
+							<view class="item">
+								<view class="content">供应商：杜康蛋品</view>
+								<view class="content">品牌：杜康</view>
+							</view>
+							<view class="item">
+								<view class="content">规格：20枚</view>
+								<view class="content">产地：江西</view>
+							</view>
+							<view class="item">
+								<view class="content">保质期：90天</view>
+							</view>
+							<view class="item">
+								<view class="content">生产日期：2020年6月1日</view>
 							</view>
 						</view>
+
 						<view class="title-item">
 							<view class="line"></view>
 							<view class="title f18 color-black text-bold">图文详情</view>
@@ -110,37 +119,9 @@
 								</view>
 							</block>
 						</view>
-
-						<view class="title-item">
-							<view class="line"></view>
-							<view class="title f18 color-black text-bold">购物指南</view>
-						</view>
-
-						<view class="steps" style="margin-bottom: 100px;">
-							<view class="item">
-								<view class="title">1.在线下单</view>
-								<view class="desc">每天可购买时间：00:00-23:00</view>
-							</view>
-							<view class="item">
-								<view class="title">2.物流配送</view>
-								<view class="desc">每天16:00之前，物流会将您昨日购买的商品，配送到您购买时选择的自提门店。</view>
-							</view>
-							<view class="item">
-								<view class="title">3.门店自提</view>
-								<view class="desc">每天16:00之后（门店不同，到货时间会有差异），您需要到购买时选择的自提门店提货。</view>
-							</view>
-							<view class="item">
-								<view class="title">4.售后无忧</view>
-								<view class="desc">如果您购买的商品有任何问题，请直接与购买的门店联系，门店将为您处理，让您售后无忧！</view>
-							</view>
-							<view class="item">
-								<view class="title">5.全国热线</view>
-								<view class="desc">如果您找不到购物的自提门店，请致电轻松优选全国服务热线！电话：4008889997</view>
-							</view>
-						</view>
-
-					</scroll-view>
+					</view>
 					<!--product-detail end-->
+					<template is="shoppingGuide"></template>
 				</swiper-item>
 
 				<swiper-item class='swiper-item'>
@@ -203,12 +184,11 @@
 								</view>
 								<text class="num"><text class="color-red">1</text>份</text>
 							</view>
-
 						</view>
 
-            <view class="btn-group">
-              <button class="btn">点击查看商品信息</button>
-            </view>
+						<view class="btn-group">
+							<button class="btn" bindtap="toDetailsTab">点击查看商品信息</button>
+						</view>
 					</view>
 				</swiper-item>
 			</swiper>
@@ -217,22 +197,22 @@
 
 	<view class="footer">
 		<view class="btn-group">
-			<view class="btn-icon">
-				<image class="icon" src="../../static/images/home_icon@3x.png"></image>
+			<view class="btn-icon" bindtap="toHome">
+				<icon class="iconfont icon-home icon"></icon>
 				<text class="text">首页</text>
 			</view>
-			<view class="btn-icon">
-				<image class="icon" src="../../static/images/nav/cart.png"></image>
+			<view class="btn-icon" bindtap="toCart">
+				<icon class="iconfont icon-cart icon"></icon>
 				<text class="text">购物车</text>
 			</view>
-			<view class="btn-icon">
-				<image class="icon" src="../../static/images/share.png"></image>
+			<view class="btn-icon" bindtap="onShare">
+				<icon class="iconfont icon-share icon"></icon>
 				<text class="text">分享</text>
 			</view>
 		</view>
 		<view class="btn-group">
-			<button class="btn add-cart-bg-color color-white">加入购物车</button>
-			<button class="btn buy-now-bg-color color-white">立即购买</button>
+			<button class="btn add-cart-bg-color color-white" bindtap="onAddToCart">加入购物车</button>
+			<button class="btn buy-now-bg-color color-white" bindtap="onBuy">立即购买</button>
 		</view>
 	</view>
 </view>

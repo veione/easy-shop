@@ -194,7 +194,8 @@ Page({
       }
     });
     this.setData({
-      checkedNum: checkedNum
+      checkedNum: checkedNum,
+      selectAll: checkedNum == this.data.cartItems.length
     })
   },
   calcCartNum: function() {
@@ -340,5 +341,12 @@ Page({
     })
     this.calcCheckedNum();
     this.calcCartNum();
+  },
+  toCheckout: function(e) {
+    if (this.data.checkedNum > 0) {
+      wx.navigateTo({
+        url: '/pages/checkout/main',
+      })
+    }
   }
 })
